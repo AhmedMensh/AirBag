@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AirBag</string>
+    <string name="travel_ship">Travel ship</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="skip_login">Skip Login</string>
 </resources>

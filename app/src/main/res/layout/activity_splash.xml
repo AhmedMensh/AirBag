@@ -7,13 +7,14 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/gradint"
+    android:background="@drawable/full_screen_background"
     tools:context=".ui.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/logo_iv"
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
         app:srcCompat="@drawable/ic_logo" />
 
 
@@ -22,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:paddingEnd="@dimen/_24sdp"
+
         android:layout_gravity="center"
-        android:text="AirBag"
+        android:text="@string/app_name"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_20sdp"
          />
@@ -32,6 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Travel ship"
+        android:text="@string/travel_ship"
+        android:textSize="@dimen/_10sdp"
         android:textColor="@android:color/darker_gray"/>
 </LinearLayout>

@@ -8,8 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="test">
-        <item name="colorPrimary">@android:color/darker_gray</item>
+
+    <style name="MaterialButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/purple</item>
+        <item name="android:startColor">@color/purple</item>
+        <item name="android:centerColor">@color/blue_light</item>
+        <item name="android:endColor">@color/blue_dark</item>
     </style>
 
 </resources>

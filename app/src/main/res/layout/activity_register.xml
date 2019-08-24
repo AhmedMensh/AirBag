@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
-    tools:context=".ui.activities.register.RegisterActivity">
+<androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@drawable/full_screen_background"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activities.register.RegisterActivity"
+        xmlns:tools="http://schemas.android.com/tools">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow"/>
     <TextView
         android:id="@+id/sign_up_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_18sdp"
+        android:drawablePadding="@dimen/_8sdp"
+        android:drawableStart="@drawable/ic_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,16 +43,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:elevation="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_tv"
-        android:src="@mipmap/ic_launcher"
+        app:srcCompat="@drawable/ic_user_profile"
+        android:background="@drawable/circle_white"
         android:id="@+id/user_profile_iv"/>
+
+    <ImageView
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintHorizontal_bias=".65"
+        android:layout_marginTop="@dimen/_60sdp"
+        app:srcCompat="@drawable/ic_camera"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/circle_white"
+        />
+
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:background="@drawable/corner_rounde_white"
         android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="@dimen/_45sdp"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_tv">
 
@@ -61,7 +98,7 @@
                 android:id="@+id/full_name_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter your Email"
+                android:hint="Enter your Full Name"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -77,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -93,7 +130,7 @@
                 android:id="@+id/email_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter your Email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -108,7 +145,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -117,6 +154,7 @@
             app:boxCornerRadiusTopStart="@dimen/_20sdp"
             app:boxStrokeColor="@android:color/darker_gray"
             app:hintEnabled="false"
+
             app:hintTextColor="@android:color/darker_gray"
             app:layout_constraintTop_toBottomOf="@+id/app_name_label">
 
@@ -124,7 +162,9 @@
                 android:id="@+id/address_et"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdp"
-                android:hint="Enter your Email"
+                android:hint="Address"
+                android:layout_gravity="start|top"
+                android:gravity="top|start"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -140,7 +180,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -157,7 +197,7 @@
                 android:id="@+id/phone_number_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter your Email"
+                android:hint="Phone Number"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -165,5 +205,24 @@
                 android:paddingBottom="@dimen/_10sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_in_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            app:cornerRadius="@dimen/_20sdp"
+            app:backgroundTint="@color/purple"
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="@string/sign_up"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_18sdp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:layout_marginEnd="@dimen/_20sdp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
