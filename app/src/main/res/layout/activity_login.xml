@@ -98,13 +98,12 @@ android:layout_gravity="center"
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_in_btn"
-        style="@style/MaterialButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         app:cornerRadius="@dimen/_20sdp"
-        app:backgroundTint="@color/blue_dark"
+        android:background="@drawable/button_background_1"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_30sdp"
         android:text="@string/sign_in"

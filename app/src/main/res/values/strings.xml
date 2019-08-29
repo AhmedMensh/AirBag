@@ -9,4 +9,5 @@
     <string name="arrivals_at">Arrivals At</string>
     <string name="cost">Cost</string>
     <string name="logout">Logout</string>
+    <string name="bag_list">Bag List</string>
 </resources>
