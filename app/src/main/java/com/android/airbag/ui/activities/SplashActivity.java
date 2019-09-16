@@ -8,6 +8,7 @@ import android.os.Handler;
 
 import com.android.airbag.R;
 import com.android.airbag.ui.activities.login.LoginActivity;
+import com.android.airbag.ui.activities.phone_verification.PhoneVerificationActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -22,12 +23,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-            }
-        },SPLASH_TIME_OUT);
+        new Handler().postDelayed(() -> startActivity(new Intent(SplashActivity.this, PhoneVerificationActivity.class)),SPLASH_TIME_OUT);
     }
 }
