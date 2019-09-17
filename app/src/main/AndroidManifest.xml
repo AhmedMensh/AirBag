@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.phone_verification.PhoneVerificationActivity"></activity>
-        <activity android:name=".ui.activities.create_bag.CreateBagActivity">
+        <activity android:name=".ui.activities.create_bag.BagListActivity">
 
         </activity>
         <activity android:name=".ui.activities.available_bags.AvailableBagsActivity"></activity>

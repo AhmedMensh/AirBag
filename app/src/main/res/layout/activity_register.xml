@@ -2,7 +2,7 @@
 <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    android:background="@drawable/full_screen_background"
+    android:background="@drawable/full_screen_background_purple"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activities.register.RegisterActivity"
@@ -37,16 +37,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_90sdp"
+
+        app:civ_border_color="@color/grey"
+        app:civ_border_width="@dimen/_3sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:elevation="@dimen/_1sdp"
         android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_tv"
-        app:srcCompat="@drawable/ic_user_profile"
-        android:background="@drawable/circle_white"
+        android:src="@drawable/ic_user_profile"
         android:id="@+id/user_profile_iv"/>
 
     <ImageView

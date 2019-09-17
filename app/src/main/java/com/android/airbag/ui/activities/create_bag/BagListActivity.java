@@ -8,19 +8,20 @@ import android.os.Bundle;
 
 import com.android.airbag.R;
 import com.android.airbag.ui.fragments.CreateBagFragment;
+import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
 
-public class CreateBagActivity extends AppCompatActivity {
+public class BagListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_bag);
+        setContentView(R.layout.activity_bag_list);
 
-        CreateBagFragment createBagFragment = new CreateBagFragment();
+        AvailableBagsFragment availableBagsFragment = new AvailableBagsFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.replace(R.id.fragment_container,createBagFragment);
+        transaction.replace(R.id.fragment_container,availableBagsFragment);
         transaction.commit();
      }
 }

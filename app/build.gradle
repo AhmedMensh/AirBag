@@ -40,4 +40,7 @@ dependencies {
     //Butter knife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //view pager dot indacator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 }

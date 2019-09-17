@@ -36,27 +36,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_name_label"
-        android:text="How It Works"
+        android:text="How It Works!"
         android:id="@+id/how_it_work_label"
         android:textAllCaps="true"
         android:textColor="@color/purple"
         android:textSize="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_20sdp"/>
 
-    <ImageView
-        android:id="@+id/image"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
+        android:layout_height="@dimen/_110sdp"
         app:srcCompat="@drawable/ic_logo_colored"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintTop_toBottomOf="@id/how_it_work_label"/>
 
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:id="@+id/dots_indicator"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsColor="@color/blue_dark"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="16dp"
+        app:dotsSpacing="4dp"
+        app:dotsWidthFactor="2.5"
+       app:dotsStrokeColor="@color/grey_light"
+        app:progressMode="true"
+        />
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/image"
+       app:layout_constraintTop_toBottomOf="@id/dots_indicator"
         android:text="Skip Intro"
-        android:textSize="@dimen/_18sdp"
+        android:textSize="@dimen/_16sdp"
         android:textAllCaps="true"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:textColor="@color/grey"
         android:textStyle="bold"
         android:layout_width="wrap_content"
