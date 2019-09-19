@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.android.airbag.R;
-import com.android.airbag.ui.activities.create_bag.BagListActivity;
+import com.android.airbag.ui.activities.bags_list.BagListActivity;
+import com.android.airbag.ui.activities.create_bag.CreateBagActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -22,6 +23,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        new Handler().postDelayed(() -> startActivity(new Intent(SplashActivity.this, BagListActivity.class)),SPLASH_TIME_OUT);
+        new Handler().postDelayed(() -> startActivity(new Intent(SplashActivity.this, CreateBagActivity.class)),SPLASH_TIME_OUT);
     }
 }

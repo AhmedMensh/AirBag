@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.CreateBagFragment">
-
+    tools:context=".ui.activities.create_bag.CreateBagActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -362,12 +361,14 @@
                 app:boxStrokeColor="@color/grey_light"
                 app:boxStrokeWidth="@dimen/_5sdp"
                 app:hintEnabled="false"
+
                 app:layout_constraintTop_toBottomOf="@id/flight_number_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:completionThreshold="1"
+                    android:padding="@dimen/_2sdp"
                     android:drawablePadding="@dimen/_5sdp"
                     android:hint="Enter your flight Number"
                     android:paddingStart="@dimen/_5sdp"
@@ -521,4 +522,5 @@
 
     </androidx.core.widget.NestedScrollView>
 
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

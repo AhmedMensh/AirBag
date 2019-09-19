@@ -11,6 +11,15 @@
     <string name="logout">Logout</string>
     <string name="bag_list">Bag List</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="available_bags">Available Bags</string>
+    <string name="pending_items">Pending Items</string>
+    <string name="locations">Locations</string>
+    <string name="date">Date</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="feature_bags">Feature Bags</string>
+    <string name="wight">Wight</string>
+    <string name="save">Save</string>
 </resources>
