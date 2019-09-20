@@ -11,10 +11,10 @@
         android:right="2dp"
         android:bottom="2dp" />
     <gradient
-        android:startColor="#E09BB3"
-        android:centerColor="#9F7AB8"
-        android:endColor="#3800BF"
-        android:angle="270"
+        android:startColor="#EB7333"
+        android:centerColor="#9E74BD"
+        android:endColor="#584BDD"
+        android:angle="225"
         >
 
     </gradient>

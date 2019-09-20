@@ -201,7 +201,7 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/sign_in_btn"
+                android:id="@+id/submit_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
                 app:cornerRadius="@dimen/_20sdp"

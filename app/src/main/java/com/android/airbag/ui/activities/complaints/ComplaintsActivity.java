@@ -1,11 +1,15 @@
 package com.android.airbag.ui.activities.complaints;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.android.airbag.R;
@@ -27,6 +31,8 @@ public class ComplaintsActivity extends BaseActivity implements View.OnClickList
     DrawerLayout drawer;
     @BindView(R.id.menu_icon)
     ImageView menuIcon;
+    @BindView(R.id.submit_btn)
+    Button submitButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,7 @@ public class ComplaintsActivity extends BaseActivity implements View.OnClickList
 
         navigationView.setNavigationItemSelectedListener(this);
         menuIcon.setOnClickListener(this::onClick);
+        submitButton.setOnClickListener(this::onClick);
     }
 
     @Override
@@ -61,6 +68,24 @@ public class ComplaintsActivity extends BaseActivity implements View.OnClickList
             case R.id.menu_icon:
                 if (!drawer.isDrawerOpen(GravityCompat.START)) drawer.openDrawer(GravityCompat.START);
                 break;
+
+            case R.id.submit_btn:
+                showConfirmationDialog();
+                break;
+
         }
+    }
+
+    private void showConfirmationDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.confirm_dialog,null);
+
+        builder.setView(view);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
     }
 }

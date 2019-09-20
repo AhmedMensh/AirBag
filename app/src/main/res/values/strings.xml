@@ -52,4 +52,8 @@
     <string name="resend">Resend</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
+    <string name="sender_name">Sender Name</string>
+    <string name="carrier_name">Carrier Name</string>
+    <string name="carrier_mobile">Carrier Mobile Number</string>
+    <string name="call_carrier">Call Carrier</string>
 </resources>
