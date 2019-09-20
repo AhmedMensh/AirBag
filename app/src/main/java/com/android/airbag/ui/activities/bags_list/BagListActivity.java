@@ -15,8 +15,10 @@ import android.widget.TextView;
 
 import com.android.airbag.R;
 import com.android.airbag.ui.activities.BaseActivity;
+import com.android.airbag.ui.fragments.CreateBagFragment;
 import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
 import com.android.airbag.ui.fragments.filter.FilterFragment;
+import com.android.airbag.ui.fragments.pending_items.PendingItemsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -86,6 +88,29 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
 
     }
 
+    private void attachPendingItemsFragment() {
+        PendingItemsFragment fragment = new PendingItemsFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
+
+
+    }
+
+
+        public void attachCreateItemsFragment() {
+        CreateBagFragment fragment = new CreateBagFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
+
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -127,7 +152,7 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
                 tabIndicator2.setVisibility(View.VISIBLE);
                 availableBagsTv.setTextColor(getResources().getColor(R.color.grey));
                 pendingItemsTv.setTextColor(getResources().getColor(R.color.blue_dark));
-                attachAvailableBagsFragment();
+                attachPendingItemsFragment();
                 break;
 
             case R.id.filter_iv:

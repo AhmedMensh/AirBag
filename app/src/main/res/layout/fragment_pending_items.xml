@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.pending_items.PendingItemsFragment">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/new_item_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Create New Item"
+        android:layout_gravity="bottom"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:gravity="start|center"
+        android:drawablePadding="@dimen/_10sdp"
+        android:paddingStart="@dimen/_20sdp"
+        android:drawableTint="@color/white"
+        android:drawableStart="@drawable/ic_weight"
+        android:textAllCaps="false"
+        android:background="@drawable/button_background_1"/>
+</FrameLayout>

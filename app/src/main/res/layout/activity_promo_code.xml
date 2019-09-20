@@ -7,7 +7,7 @@
     android:background="@color/off_white"
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
-    tools:openDrawer="start"
+
     tools:context=".ui.activities.promo_code.PromoCodeActivity">
 
 
@@ -95,10 +95,14 @@
                 android:textSize="@dimen/_18sdp"
                 android:textColor="@color/blue_light"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:padding="@dimen/_20sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp"
                 android:backgroundTint="@color/off_white"
                 android:background="@drawable/rect_rounded_corner_white_with_white_border"
                 android:text="Promo Code 1239"/>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
@@ -107,6 +111,10 @@
                 android:text="Share Promo Code"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"
+                android:gravity="start|center"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:drawableStart="@drawable/ic_share"
                 android:textAllCaps="false"
                 android:background="@drawable/button_background_1"/>
         </LinearLayout>

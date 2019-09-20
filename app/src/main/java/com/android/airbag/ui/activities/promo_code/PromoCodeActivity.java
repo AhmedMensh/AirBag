@@ -33,6 +33,7 @@ public class PromoCodeActivity extends BaseActivity implements View.OnClickListe
         setContentView(R.layout.activity_promo_code);
 
         unbinder = ButterKnife.bind(this);
+        navigationView.setNavigationItemSelectedListener(this);
         menuIcon.setOnClickListener(this);
     }
 

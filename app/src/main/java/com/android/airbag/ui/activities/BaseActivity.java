@@ -75,7 +75,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
                 if (getNavigationMenuItemId() == R.id.navigation_promo_code){
                     Toast.makeText(this, "You in Promo Code", Toast.LENGTH_SHORT).show();
-
                     return false;
                 }
                 startActivity(new Intent(this, PromoCodeActivity.class));
