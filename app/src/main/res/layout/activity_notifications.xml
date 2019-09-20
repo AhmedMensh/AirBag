@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
     tools:openDrawer="start"
-    tools:context=".ui.activities.bags_list.BagListActivity">
+    tools:context=".ui.activities.notifications.NotificationsActivity">
 
 
 
@@ -51,20 +51,13 @@
                     android:layout_weight="4"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:textColor="@color/white"
-
-                    android:text="@string/bag_list"
+                    android:paddingStart="@dimen/_30sdp"
+                    android:paddingEnd="@dimen/_40sdp"
+                    android:text="@string/notifications"
                     android:textSize="@dimen/_20sdp"
                     />
-
-                <ImageView
-                    android:id="@+id/filter_iv"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:tint="@color/white"
-                    app:srcCompat="@drawable/ic_filter"
-                    android:layout_height="@dimen/_20sdp"/>
 
 
             </LinearLayout>
@@ -96,13 +89,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/available_bags_tv"
+                    android:id="@+id/approved_request_tv"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_14sdp"
-                    android:text="@string/available_bags"/>
+                    android:text="@string/approved_request"/>
 
                 <View
                     android:layout_width="0dp"
@@ -112,14 +105,14 @@
 
 
                 <TextView
-                    android:id="@+id/pending_items_tv"
+                    android:id="@+id/history_notification_tv"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_14sdp"
-                    android:text="@string/pending_items"/>
+                    android:text="@string/history_notification"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -129,8 +122,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingEnd="@dimen/_10sdp"
-            android:elevation="@dimen/_6sdp"
             android:paddingStart="@dimen/_10sdp"
+            android:elevation="@dimen/_6sdp"
             android:background="@color/white"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.complaints.ComplaintsActivity"></activity>
+        <activity android:name=".ui.activities.notifications.NotificationsActivity"></activity>
+        <activity android:name=".ui.activities.complaints.ComplaintsActivity" />
         <activity android:name=".ui.activities.profile_settings.ProfileSettingsActivity" />
         <activity android:name=".ui.activities.create_bag.CreateBagActivity" />
         <activity android:name=".ui.activities.phone_verification.PhoneVerificationActivity" />

@@ -71,6 +71,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="@dimen/_60sdp"
             android:orientation="vertical"
+            android:elevation="@dimen/_6sdp"
             app:layout_constraintTop_toBottomOf="@+id/layout"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"

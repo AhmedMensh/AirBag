@@ -76,17 +76,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_30sdp"
             android:textColor="@android:color/black"
             android:text="@string/full_name"/>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/full_name_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/_20sdp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
             app:boxCornerRadiusBottomStart="@dimen/_20sdp"
@@ -100,8 +100,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/full_name_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your Full Name"
+                android:layout_height="match_parent"
+                android:hint="@string/enter_your_full_name"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -114,19 +114,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_30sdp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:text="@string/email"/>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/email_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
 
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/_20sdp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
             app:boxCornerRadiusBottomStart="@dimen/_20sdp"
@@ -140,8 +140,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
+                android:layout_height="match_parent"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -154,19 +154,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_30sdp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:text="@string/phone_number"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/phone_number_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/_20sdp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
             app:boxCornerRadiusBottomStart="@dimen/_20sdp"
@@ -181,8 +181,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone_number_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Phone Number"
+                android:layout_height="match_parent"
+                android:hint="@string/phone_number"
                 android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -192,19 +192,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sign_in_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            app:cornerRadius="@dimen/_20sdp"
-            app:backgroundTint="@color/purple"
-
+            android:background="@drawable/button_background_1"
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_20sdp"
-            android:text="@string/submit"
+            android:text="@string/save"
+
             android:textColor="@android:color/white"
             android:textSize="@dimen/_18sdp"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
 
             android:layout_marginBottom="@dimen/_10sdp"
 

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.airbag.R;
 import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.android.airbag.ui.activities.complaints.ComplaintsActivity;
+import com.android.airbag.ui.activities.notifications.NotificationsActivity;
 import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -48,7 +49,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                 break;
 
             case R.id.navigation_notifications:
-                Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
+                if (getNavigationMenuItemId() == R.id.navigation_notifications){
+                    Toast.makeText(this, "You are in notifications activity", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                startActivity(new Intent(this, NotificationsActivity.class));
                 break;
 
             case R.id.navigation_profile_settings:

@@ -40,4 +40,12 @@
     <string name="phone_number">Phone Number</string>
     <string name="enter_your_full_name">Enter your Full Name</string>
     <string name="your_message">Your Message</string>
+    <string name="approved_request">Approved Request</string>
+    <string name="history_notification">History Notification</string>
+    <string name="approved">Approved</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="congratulations">Congratulations!!</string>
+    <string name="bag_reservation">Bag Reservation</string>
 </resources>
