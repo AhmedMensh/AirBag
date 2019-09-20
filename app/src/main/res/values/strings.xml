@@ -12,7 +12,6 @@
     <string name="bag_list">Bag List</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="available_bags">Available Bags</string>
     <string name="pending_items">Pending Items</string>
     <string name="locations">Locations</string>
@@ -22,4 +21,23 @@
     <string name="feature_bags">Feature Bags</string>
     <string name="wight">Wight</string>
     <string name="save">Save</string>
+
+    <!--  Navigation Menu -->
+    <string name="my_bags_list">My Bags List</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="received_items">Received Items</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="payment_wallet">Payment Wallet</string>
+    <string name="received">Received</string>
+    <string name="air_channel">Air Channel</string>
+    <string name="safety_rules">Safety Rules</string>
+    <string name="complaints">Complaints</string>
+    <string name="submit">Submit</string>
+    <string name="be_a_carrier">Be a Carrier</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">E mail</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_your_full_name">Enter your Full Name</string>
+    <string name="your_message">Your Message</string>
 </resources>

@@ -1,24 +1,29 @@
 package com.android.airbag.ui.activities.bags_list;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.airbag.R;
+import com.android.airbag.ui.activities.BaseActivity;
 import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
 import com.android.airbag.ui.fragments.filter.FilterFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class BagListActivity extends AppCompatActivity implements View.OnClickListener {
+public class BagListActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "AvailableBagsActivity";
     private Unbinder unbinder;
@@ -36,7 +41,11 @@ public class BagListActivity extends AppCompatActivity implements View.OnClickLi
     LinearLayout tabsIconLayout;
     @BindView(R.id.tabs_indicator_layout)
     LinearLayout tabsIndicatorLayout;
-
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+    @BindView(R.id.menu_icon) ImageView menuIcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +56,11 @@ public class BagListActivity extends AppCompatActivity implements View.OnClickLi
         availableBagsTv.setOnClickListener(this::onClick);
         pendingItemsTv.setOnClickListener(this::onClick);
         filterIv.setOnClickListener(this::onClick);
+        menuIcon.setOnClickListener(this::onClick);
         attachAvailableBagsFragment();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
 
 
 
@@ -69,12 +82,32 @@ public class BagListActivity extends AppCompatActivity implements View.OnClickLi
 
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
+
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
+    public int getContentViewId(){
+        return R.layout.activity_bag_list;
+    }
+
+    @Override
+    public int getNavigationMenuItemId() {
+        return R.id.navigation_my_bags;
     }
 
     @Override
@@ -101,6 +134,10 @@ public class BagListActivity extends AppCompatActivity implements View.OnClickLi
                 attachFilterFragment();
                 tabsIconLayout.setVisibility(View.GONE);
                 tabsIndicatorLayout.setVisibility(View.GONE);
+                break;
+
+            case R.id.menu_icon:
+                if (!drawer.isDrawerOpen(GravityCompat.START)) drawer.openDrawer(GravityCompat.START);
                 break;
 
 

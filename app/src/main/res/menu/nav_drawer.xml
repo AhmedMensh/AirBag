@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/first_group">
+
+        <item android:id="@+id/navigation_my_bags"
+            android:title="@string/my_bags_list"
+            android:icon="@drawable/ic_bag"/>
+
+
+        <item android:id="@+id/navigation_notifications"
+            android:title="@string/notifications"
+            android:icon="@drawable/ic_mail"/>
+
+
+        <item android:id="@+id/navigation_profile_settings"
+            android:title="@string/profile_settings"
+            android:icon="@drawable/ic_settings"/>
+
+
+        <item android:id="@+id/navigation_received_items"
+            android:title="@string/received_items"
+            android:icon="@drawable/ic_checked"/>
+    </group>
+
+    <group android:id="@+id/second_group" android:checkableBehavior="single">
+
+        <item android:id="@+id/navigation_promo_code"
+            android:title="@string/promo_code"
+            android:icon="@drawable/ic_menu"/>
+
+
+        <item android:id="@+id/navigation_payment_wallet"
+            android:title="@string/payment_wallet"
+            android:icon="@drawable/ic_menu"/>
+
+
+        <item android:id="@+id/navigation_received"
+            android:title="@string/received"
+            android:icon="@drawable/ic_menu"/>
+
+    </group>
+
+    <group android:id="@+id/third_group">
+
+        <item android:id="@+id/navigation_air_channel"
+            android:title="@string/air_channel"
+            android:icon="@drawable/ic_youtube"/>
+
+
+        <item android:id="@+id/navigation_safety_rules"
+            android:title="@string/safety_rules"
+            android:icon="@drawable/ic_saftey_shield"/>
+
+
+        <item android:id="@+id/navigation_complaints"
+            android:title="@string/complaints"
+            android:icon="@drawable/ic_complinte"/>
+
+
+        <item android:id="@+id/navigation_logout"
+            android:title="@string/logout"
+            android:icon="@drawable/ic_logout"/>
+    </group>
+</menu>

@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.create_bag.CreateBagActivity"></activity>
+        <activity android:name=".ui.activities.complaints.ComplaintsActivity"></activity>
+        <activity android:name=".ui.activities.profile_settings.ProfileSettingsActivity" />
+        <activity android:name=".ui.activities.create_bag.CreateBagActivity" />
         <activity android:name=".ui.activities.phone_verification.PhoneVerificationActivity" />
         <activity
             android:name=".ui.activities.bags_list.BagListActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ui.activities.available_bags.AvailableBagsActivity" />
         <activity android:name=".ui.activities.guide.GuideActivity" />
         <activity

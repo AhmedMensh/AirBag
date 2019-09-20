@@ -1,69 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    android:background="@drawable/full_screen_background_purple"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.activities.register.RegisterActivity"
-        xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.profile_settings.ProfileSettingsActivity">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        >
-
-    <ImageView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_back_arrow"/>
-    <TextView
-        android:id="@+id/sign_up_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="@string/sign_up"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_18sdp"
-        android:drawablePadding="@dimen/_8sdp"
-        android:drawableStart="@drawable/ic_avatar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/header_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_image"/>
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
 
-        app:civ_border_color="@color/grey"
-        app:civ_border_width="@dimen/_3sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_tv"
-        android:src="@drawable/ic_user_profile"
-        android:id="@+id/user_profile_iv"/>
 
-    <ImageView
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="@dimen/_2sdp"
-        app:layout_constraintHorizontal_bias=".65"
-        android:layout_marginTop="@dimen/_60sdp"
-        app:srcCompat="@drawable/ic_camera"
-        android:padding="@dimen/_6sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/circle_white"
-        />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".25"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:scaleX="-1"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:tint="@color/white"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_camera"
+            android:elevation="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="@string/be_a_carrier"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background_1"
+
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/profile_pic"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/layout"
@@ -71,20 +66,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:background="@drawable/rect_rounded_corner_white_with_white_border"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/header_layout"
         android:layout_marginBottom="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="@dimen/_45sdp"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_tv">
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColor="@android:color/black"
+            android:text="@string/full_name"/>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/full_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -110,13 +111,21 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/email"/>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/email_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_20sdp"
+
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -142,6 +151,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/phone_number"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -149,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="10dp"
             app:boxBackgroundColor="@android:color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_20sdp"
@@ -183,7 +199,7 @@
             app:cornerRadius="@dimen/_20sdp"
             app:backgroundTint="@color/purple"
 
-            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:text="@string/submit"
             android:textColor="@android:color/white"
@@ -194,5 +210,4 @@
 
             android:layout_marginEnd="@dimen/_20sdp" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>

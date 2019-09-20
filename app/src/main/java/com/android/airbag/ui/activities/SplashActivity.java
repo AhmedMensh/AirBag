@@ -23,6 +23,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        new Handler().postDelayed(() -> startActivity(new Intent(SplashActivity.this, CreateBagActivity.class)),SPLASH_TIME_OUT);
+        new Handler().postDelayed(() -> startActivity(new Intent(SplashActivity.this, BagListActivity.class)),SPLASH_TIME_OUT);
     }
 }

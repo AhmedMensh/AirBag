@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_image"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_percent=".5"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sara William"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am Sender"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/blue_light"
+        app:layout_constraintTop_toBottomOf="@id/profile_name"
+        app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+    <View
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias=".32"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@android:color/white"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".25"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".8"
+        android:text="@string/be_a_carrier"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/profile_pic"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
