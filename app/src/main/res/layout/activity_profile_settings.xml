@@ -195,7 +195,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sign_in_btn"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_height="@dimen/_42sdp"
             android:background="@drawable/button_background_1"
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_20sdp"

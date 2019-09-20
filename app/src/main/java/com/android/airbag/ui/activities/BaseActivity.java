@@ -1,21 +1,27 @@
 package com.android.airbag.ui.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.airbag.R;
 import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.android.airbag.ui.activities.complaints.ComplaintsActivity;
+import com.android.airbag.ui.activities.login.LoginActivity;
 import com.android.airbag.ui.activities.notifications.NotificationsActivity;
 import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity;
+import com.android.airbag.ui.activities.promo_code.PromoCodeActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -24,6 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
     private static final String TAG = "BaseActivity";
     protected NavigationView navigationView;
+    AlertDialog logoutDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,17 +72,54 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                 break;
 
             case R.id.navigation_promo_code:
-                Toast.makeText(this, "5", Toast.LENGTH_SHORT).show();
+
+                if (getNavigationMenuItemId() == R.id.navigation_promo_code){
+                    Toast.makeText(this, "You in Promo Code", Toast.LENGTH_SHORT).show();
+
+                    return false;
+                }
+                startActivity(new Intent(this, PromoCodeActivity.class));
                 break;
 
             case R.id.navigation_complaints:
                 startActivity(new Intent(this, ComplaintsActivity.class));
                 break;
 
+            case R.id.navigation_logout:
+                showLogoutDialog();
+                break;
+
 
 
         }
         return false;
+    }
+    private void showLogoutDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.log_out_dialog,null);
+
+        Button agreeButton = view.findViewById(R.id.yes_btn);
+        Button cancelButton = view.findViewById(R.id.cancel_btn);
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logoutDialog.dismiss();
+            }
+        });
+        agreeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BaseActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
+
+        builder.setView(view);
+
+        logoutDialog = builder.create();
+        logoutDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        logoutDialog.show();
     }
 
     public abstract int getContentViewId();

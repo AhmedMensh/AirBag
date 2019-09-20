@@ -13,13 +13,27 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.airbag.R;
+import com.android.airbag.ui.activities.ForgetPasswordActivity;
+import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.android.airbag.ui.activities.register.RegisterActivity;
 
-public class LoginActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String TAG = "LoginActivity";
+    private Unbinder unbinder;
+    @BindView(R.id.sign_in_btn)
+    Button signInButton;
+    @BindView(R.id.forget_password_tv) TextView forgetPasswordTextView;
+    @BindView(R.id.sign_up_btn) Button signUpButton;
+    @BindView(R.id.skip_login_tv) TextView skipLoginTextView;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +41,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        TextView textView = findViewById(R.id.skip_login_tv);
+        unbinder = ButterKnife.bind(this);
+        signInButton.setOnClickListener(this::onClick);
+        forgetPasswordTextView.setOnClickListener(this::onClick);
+        signInButton.setOnClickListener(this::onClick);
+        skipLoginTextView.setOnClickListener(this::onClick);
+
         SpannableString content = new SpannableString(getResources().getString(R.string.skip_login));
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView.setText(content);
+        skipLoginTextView.setText(content);
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.log_out_dialog,null);
 
-        builder.setView(view);
-
-        AlertDialog dialog = builder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
 
 
 
@@ -51,4 +63,26 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+            case R.id.sign_in_btn:
+                startActivity(new Intent(LoginActivity.this, BagListActivity.class));
+                finish();
+                break;
+
+            case R.id.forget_password_tv:
+                startActivity(new Intent(LoginActivity.this , ForgetPasswordActivity.class));
+                break;
+
+            case R.id.sign_up_btn:
+                startActivity(new Intent(LoginActivity.this , RegisterActivity.class));
+                break;
+
+            case R.id.skip_login_tv:
+                startActivity(new Intent(LoginActivity.this, BagListActivity.class));
+                break;
+        }
+    }
 }

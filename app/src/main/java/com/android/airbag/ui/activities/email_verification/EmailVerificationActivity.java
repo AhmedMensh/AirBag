@@ -1,4 +1,4 @@
-package com.android.airbag.ui.activities.phone_verification;
+package com.android.airbag.ui.activities.email_verification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,36 +10,38 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.airbag.R;
-import com.android.airbag.ui.activities.email_verification.EmailVerificationActivity;
+import com.android.airbag.ui.activities.guide.GuideActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class PhoneVerificationActivity extends AppCompatActivity implements View.OnClickListener {
+public class EmailVerificationActivity extends AppCompatActivity implements View.OnClickListener{
+
+
 
     private static final String TAG = "PhoneVerification";
     private Unbinder unbinder;
 
-    @BindView(R.id.phone_input_layout)
-    LinearLayout phoneInputLayout;
+    @BindView(R.id.email_input_layout)
+    LinearLayout emailInputLayout;
 
     @BindView(R.id.submit_code_layout) LinearLayout submitCodeLayout;
     @BindView(R.id.continue_btn)
     Button continueButton;
     @BindView(R.id.submit_btn) Button submitButton;
-    @BindView(R.id.edit_tv)
-    TextView editPhoneNumberTv;
+    @BindView(R.id.edit_mail_tv)
+    TextView editEmailTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phone_verification);
+        setContentView(R.layout.activity_email_verification);
 
-       unbinder =  ButterKnife.bind(this);
-       continueButton.setOnClickListener(this::onClick);
-       submitButton.setOnClickListener(this::onClick);
-       editPhoneNumberTv.setOnClickListener(this::onClick);
 
+        unbinder =  ButterKnife.bind(this);
+        continueButton.setOnClickListener(this::onClick);
+        submitButton.setOnClickListener(this::onClick);
+        editEmailTv.setOnClickListener(this::onClick);
     }
 
     @Override
@@ -51,19 +53,21 @@ public class PhoneVerificationActivity extends AppCompatActivity implements View
     @Override
     public void onClick(View view) {
 
+
+
         switch (view.getId()){
             case R.id.continue_btn:
-                phoneInputLayout.setVisibility(View.GONE);
+                emailInputLayout.setVisibility(View.GONE);
                 submitCodeLayout.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.edit_tv:
-                phoneInputLayout.setVisibility(View.VISIBLE);
+            case R.id.edit_mail_tv:
+                emailInputLayout.setVisibility(View.VISIBLE);
                 submitCodeLayout.setVisibility(View.GONE);
                 break;
 
             case R.id.submit_btn:
-                startActivity(new Intent(PhoneVerificationActivity.this, EmailVerificationActivity.class));
+                startActivity(new Intent(EmailVerificationActivity.this , GuideActivity.class));
                 finish();
                 break;
         }

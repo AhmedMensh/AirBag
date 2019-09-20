@@ -30,15 +30,23 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_percent=".7"/>
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+android:layout_marginEnd="@dimen/_10sdp"
         android:text="@string/approved"
         android:textColor="@color/green"
         app:strokeColor="@color/blue_dark"
         android:padding="@dimen/_5sdp"
         app:strokeWidth="@dimen/_1sdp"
+        app:layout_constraintStart_toEndOf="@id/guideline"
         android:backgroundTint="@color/off_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

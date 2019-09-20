@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.airbag.R;
+import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
@@ -22,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class GuideActivity extends AppCompatActivity {
+public class GuideActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "GuideActivity";
     private Unbinder unbinder;
@@ -30,6 +32,7 @@ public class GuideActivity extends AppCompatActivity {
     @BindView(R.id.view_pager) ViewPager mViewPager ;
     @BindView(R.id.dots_indicator)
     SpringDotsIndicator dotsIndicator;
+    @BindView(R.id.skip_intro_tv) TextView skipIntroTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +40,23 @@ public class GuideActivity extends AppCompatActivity {
 
         unbinder = ButterKnife.bind(this);
 
+        skipIntroTextView.setOnClickListener(this::onClick);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
         dotsIndicator.setViewPager(mViewPager);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.skip_intro_tv:
+                startActivity(new Intent(GuideActivity.this , BagListActivity.class));
+                finish();
+                break;
+        }
     }
 
     /**
@@ -99,7 +113,6 @@ public class GuideActivity extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.ic_logo_colored);
                     Toast.makeText(getContext(), "3", Toast.LENGTH_SHORT).show();
 //                    ln.setBackgroundColor(Color.BLACK);
-
                     break;
 
 

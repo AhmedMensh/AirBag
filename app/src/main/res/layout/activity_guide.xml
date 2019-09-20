@@ -69,6 +69,7 @@
         />
     <TextView
        app:layout_constraintTop_toBottomOf="@id/dots_indicator"
+        android:id="@+id/skip_intro_tv"
         android:text="Skip Intro"
         android:textSize="@dimen/_16sdp"
         android:textAllCaps="true"
