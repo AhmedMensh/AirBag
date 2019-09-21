@@ -22,6 +22,7 @@ import com.android.airbag.ui.activities.login.LoginActivity;
 import com.android.airbag.ui.activities.notifications.NotificationsActivity;
 import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity;
 import com.android.airbag.ui.activities.promo_code.PromoCodeActivity;
+import com.android.airbag.ui.activities.rules.RulesActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -82,6 +83,14 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
             case R.id.navigation_complaints:
                 startActivity(new Intent(this, ComplaintsActivity.class));
+                break;
+
+            case R.id.navigation_safety_rules:
+                if (getNavigationMenuItemId() == R.id.navigation_safety_rules){
+                    Toast.makeText(this, "You in Safety Rules", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                startActivity(new Intent(this, RulesActivity.class));
                 break;
 
             case R.id.navigation_logout:

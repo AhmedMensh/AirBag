@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.promo_code.PromoCodeActivity"></activity>
+        <activity android:name=".ui.activities.payment.PaymentActivity"></activity>
+        <activity android:name=".ui.activities.rules.RulesActivity" />
+        <activity android:name=".ui.activities.promo_code.PromoCodeActivity" />
         <activity android:name=".ui.activities.email_verification.EmailVerificationActivity" />
         <activity android:name=".ui.activities.ForgetPasswordActivity" />
         <activity android:name=".ui.activities.notifications.NotificationsActivity" />

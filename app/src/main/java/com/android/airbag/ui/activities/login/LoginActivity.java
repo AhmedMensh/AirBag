@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -42,10 +43,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         unbinder = ButterKnife.bind(this);
-        signInButton.setOnClickListener(this::onClick);
-        forgetPasswordTextView.setOnClickListener(this::onClick);
-        signInButton.setOnClickListener(this::onClick);
-        skipLoginTextView.setOnClickListener(this::onClick);
+        signInButton.setOnClickListener(this);
+        forgetPasswordTextView.setOnClickListener(this);
+        signInButton.setOnClickListener(this);
+        skipLoginTextView.setOnClickListener(this);
 
         SpannableString content = new SpannableString(getResources().getString(R.string.skip_login));
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
@@ -55,14 +56,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-
     }
 
-    public void signUp(View view) {
+    private void changeButtonBackgroundBasedOnUserType(){
+        int colors[] = { 0xff255779, 0xffa6c0cd,0xffa6c0cd};
 
-        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+
+        GradientDrawable gradientDrawable = new GradientDrawable(
+                GradientDrawable.Orientation.LEFT_RIGHT, colors);
+
+        gradientDrawable.setCornerRadius(50.0f);
+
+
+        signInButton.setBackgroundDrawable(gradientDrawable);
     }
-
     @Override
     public void onClick(View view) {
 

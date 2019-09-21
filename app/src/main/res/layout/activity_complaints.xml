@@ -75,7 +75,8 @@
             app:layout_constraintTop_toBottomOf="@+id/layout"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:background="@drawable/rounded_top_corner_white"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rect_rounded_corner_white_with_white_border"
             android:gravity="start"
             >
 

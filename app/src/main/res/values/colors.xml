@@ -12,5 +12,6 @@
     <color name="white">#FFF</color>
     <color name="off_white">#EFF2FD</color>
     <color name="green">#6FF738</color>
+    <color name="black">#000</color>
 
 </resources>
