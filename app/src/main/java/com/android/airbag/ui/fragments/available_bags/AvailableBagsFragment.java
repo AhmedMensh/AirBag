@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -21,11 +22,12 @@ import butterknife.Unbinder;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AvailableBagsFragment extends Fragment {
+public class AvailableBagsFragment extends Fragment implements AvailableBagsAdapter.ItemClickListener {
 
     private static final String TAG = "AvailableBagsFragment";
     private AvailableBagsAdapter bagsAdapter;
     private Unbinder unbinder;
+    private LinearLayoutManager layoutManager;
 
     @BindView(R.id.available_bags_rv)
     RecyclerView availableBagsRv;
@@ -46,12 +48,35 @@ public class AvailableBagsFragment extends Fragment {
         return view;
     }
 
-    private void initBagsRv() {
-
-        bagsAdapter = new AvailableBagsAdapter();
-        availableBagsRv.setAdapter(bagsAdapter);
-        availableBagsRv.setHasFixedSize(true);
-        availableBagsRv.setLayoutManager(new LinearLayoutManager(getContext()));
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 
+    private void initBagsRv() {
+
+        layoutManager = new LinearLayoutManager(getContext());
+        bagsAdapter = new AvailableBagsAdapter(this);
+        availableBagsRv.setAdapter(bagsAdapter);
+        availableBagsRv.setHasFixedSize(true);
+        availableBagsRv.setLayoutManager(layoutManager);
+
+
+    }
+
+    private void smoothScroll(int itemPosition){
+        RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(getContext()) {
+            @Override protected int getVerticalSnapPreference() {
+                return LinearSmoothScroller.SNAP_TO_START;
+            }
+        };
+        smoothScroller.setTargetPosition(itemPosition);
+        layoutManager.startSmoothScroll(smoothScroller);
+    }
+
+    @Override
+    public void onItemClickListener(int itemPosition) {
+        smoothScroll(itemPosition);
+    }
 }
