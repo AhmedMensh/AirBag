@@ -17,6 +17,7 @@ import com.android.airbag.R;
 import com.android.airbag.ui.activities.BaseActivity;
 import com.android.airbag.ui.fragments.CreateBagFragment;
 import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
+import com.android.airbag.ui.fragments.create_pending_items.CreatePendingItemsFragment;
 import com.android.airbag.ui.fragments.filter.FilterFragment;
 import com.android.airbag.ui.fragments.pending_items.PendingItemsFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -100,8 +101,8 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
     }
 
 
-        public void attachCreateItemsFragment() {
-        CreateBagFragment fragment = new CreateBagFragment();
+        public void attachCreatePendingItemsFragment() {
+        CreatePendingItemsFragment fragment = new CreatePendingItemsFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 

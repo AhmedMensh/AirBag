@@ -32,7 +32,7 @@ public class PendingItemsFragment extends Fragment {
         view.findViewById(R.id.new_item_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((BagListActivity)getActivity()).attachCreateItemsFragment();
+                ((BagListActivity)getActivity()).attachCreatePendingItemsFragment();
             }
         });
         return  view;
