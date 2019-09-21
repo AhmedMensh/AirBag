@@ -20,6 +20,7 @@ import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.android.airbag.ui.activities.complaints.ComplaintsActivity;
 import com.android.airbag.ui.activities.login.LoginActivity;
 import com.android.airbag.ui.activities.notifications.NotificationsActivity;
+import com.android.airbag.ui.activities.payment.PaymentActivity;
 import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity;
 import com.android.airbag.ui.activities.promo_code.PromoCodeActivity;
 import com.android.airbag.ui.activities.rules.RulesActivity;
@@ -91,6 +92,14 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                     return false;
                 }
                 startActivity(new Intent(this, RulesActivity.class));
+                break;
+
+            case R.id.navigation_payment_wallet:
+                if (getNavigationMenuItemId() == R.id.navigation_payment_wallet){
+                    Toast.makeText(this, "You in Payment", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                startActivity(new Intent(this, PaymentActivity.class));
                 break;
 
             case R.id.navigation_logout:
