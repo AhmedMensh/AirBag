@@ -43,9 +43,9 @@
 android:layout_marginEnd="@dimen/_10sdp"
         android:text="@string/approved"
         android:textColor="@color/green"
-        app:strokeColor="@color/blue_dark"
+
         android:padding="@dimen/_5sdp"
-        app:strokeWidth="@dimen/_1sdp"
+        android:elevation="@dimen/_6sdp"
         app:layout_constraintStart_toEndOf="@id/guideline"
         android:backgroundTint="@color/off_white"
         app:layout_constraintEnd_toEndOf="parent"

@@ -11,7 +11,7 @@
         android:right="2dp"
         android:bottom="2dp" />
     <gradient
-        android:startColor="#B755FF"
+        android:startColor="@color/purple"
         android:centerColor="#584BDD"
         android:endColor="#584BDD"
         android:angle="225"

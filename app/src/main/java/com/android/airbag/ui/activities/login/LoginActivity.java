@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         unbinder = ButterKnife.bind(this);
         signInButton.setOnClickListener(this);
         forgetPasswordTextView.setOnClickListener(this);
-        signInButton.setOnClickListener(this);
+        signUpButton.setOnClickListener(this);
         skipLoginTextView.setOnClickListener(this);
 
         SpannableString content = new SpannableString(getResources().getString(R.string.skip_login));

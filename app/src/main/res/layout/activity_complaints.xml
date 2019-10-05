@@ -9,6 +9,7 @@
     android:background="@color/off_white"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:layoutDirection="ltr"
     tools:context=".ui.activities.complaints.ComplaintsActivity">
 
 
@@ -235,7 +236,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
 
-        android:layoutDirection="locale"
         app:itemTextColor="@android:color/black"
 
         app:itemIconTint="@color/blue_dark"

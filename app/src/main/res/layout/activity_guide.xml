@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".ui.activities.guide.GuideActivity">
 
 
@@ -69,11 +70,12 @@
         />
     <TextView
        app:layout_constraintTop_toBottomOf="@id/dots_indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias=".5"
         android:id="@+id/skip_intro_tv"
         android:text="Skip Intro"
         android:textSize="@dimen/_16sdp"
         android:textAllCaps="true"
-        android:layout_marginTop="@dimen/_20sdp"
         android:textColor="@color/grey"
         android:textStyle="bold"
         android:layout_width="wrap_content"

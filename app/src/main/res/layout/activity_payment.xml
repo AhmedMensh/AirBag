@@ -7,7 +7,8 @@
     android:background="@color/off_white"
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
-
+    tools:openDrawer="start"
+    android:layoutDirection="ltr"
     tools:context=".ui.activities.payment.PaymentActivity">
 
 
@@ -275,8 +276,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
-
-        android:layoutDirection="locale"
         app:itemTextColor="@android:color/black"
 
         app:itemIconTint="@color/blue_dark"

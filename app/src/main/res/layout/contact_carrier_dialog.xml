@@ -2,261 +2,278 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="@dimen/_10sdp"
+
+    android:layoutDirection="ltr"
     android:layout_width="match_parent"
-    android:background="@drawable/rect_rounded_corner_white_with_white_border"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_cancel"
-        android:tint="@color/grey_light"
-        app:tint="@color/grey_light"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/sender_name_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sender_name"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/sender_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_14sdp"
-        android:text="AHMED MENSH"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/sender_name_label"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/date_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sender_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:textSize="@dimen/_14sdp"
-        android:text="@string/date"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/date_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="28/2/2018"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintStart_toEndOf="@id/date_label"
-        app:layout_constraintTop_toBottomOf="@id/sender_name_tv"/>
-
-
-    <LinearLayout
-        android:id="@id/layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date_tv">
-
-        <ImageView
-            android:id="@+id/location_pin_top"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/ic_location_pin"
-            android:layout_marginTop="@dimen/_30sdp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <View
-            android:layout_width="@dimen/_1sdp"
-            android:layout_height="@dimen/_70sdp"
-            android:layout_gravity="center"
-            android:background="@android:color/darker_gray"
-            />
-
-        <ImageView
-            android:id="@+id/location_pin_bottom"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/ic_location_pin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="@dimen/_30sdp"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="start"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/date_tv"
-        app:layout_constraintStart_toEndOf="@id/layout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/departure_from"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Borg El ARAB"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_5sdp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/arrivals_at"
-
-            android:layout_marginTop="@dimen/_40sdp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cairo"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_5sdp"/>
-
-        <LinearLayout
-            android:id="@+id/more_details_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Receiver Name"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AHMED"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_18sdp"/>
-
-            <TextView
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Receiver Mobile Number"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="01284536255"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_18sdp"/>
-
-
-            <TextView
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sender Name"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AHMED"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_18sdp"/>
-
-            <TextView
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sender Mobile Number"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="01092521471"
-                android:textStyle="bold"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_18sdp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/carrier_name_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/carrier_name"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout1"/>
-
-    <TextView
-        android:id="@+id/carrier_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_14sdp"
-        android:text="AHMED MENSH"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/carrier_name_label"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-
-    <TextView
-        android:id="@+id/carrier_mobile_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/carrier_mobile"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carrier_name_tv"/>
-
-    <TextView
-        android:id="@+id/carrier_mobile_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_14sdp"
-        android:text="01252514844"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/carrier_mobile_label"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <androidx.appcompat.widget.AppCompatButton
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_42sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/button_background_1"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:text="@string/call_carrier"
-        android:textSize="@dimen/_14sdp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/carrier_mobile_tv"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_margin="@dimen/_20sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_cancel"
+                android:tint="@color/grey_light"
+                app:tint="@color/grey_light"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/sender_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sender_name"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/sender_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:text="AHMED MENSH"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/sender_name_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/date_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sender_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_14sdp"
+                android:text="@string/date"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28/2/2018"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toEndOf="@id/date_label"
+                app:layout_constraintTop_toBottomOf="@id/sender_name_tv"/>
+
+
+            <LinearLayout
+                android:id="@id/layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_tv">
+
+                <ImageView
+                    android:id="@+id/location_pin_top"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:srcCompat="@drawable/ic_location_pin"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/darker_gray"
+                    />
+
+                <ImageView
+                    android:id="@+id/location_pin_bottom"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:srcCompat="@drawable/ic_location_pin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/date_tv"
+                app:layout_constraintStart_toEndOf="@id/layout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/departure_from"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Borg El ARAB"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arrivals_at"
+
+                    android:layout_marginTop="@dimen/_40sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cairo"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <LinearLayout
+                    android:id="@+id/more_details_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receiver Name"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AHMED"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_18sdp"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receiver Mobile Number"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01284536255"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_18sdp"/>
+
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sender Name"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AHMED"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_18sdp"/>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sender Mobile Number"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01092521471"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_18sdp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/carrier_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carrier_name"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout1"/>
+
+            <TextView
+                android:id="@+id/carrier_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:text="AHMED MENSH"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/carrier_name_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+            <TextView
+                android:id="@+id/carrier_mobile_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carrier_mobile"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carrier_name_tv"/>
+
+            <TextView
+                android:id="@+id/carrier_mobile_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:text="01252514844"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/carrier_mobile_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/button_background_1"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/call_carrier"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/carrier_mobile_tv"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>

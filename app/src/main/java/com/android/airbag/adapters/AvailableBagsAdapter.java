@@ -64,7 +64,7 @@ public class AvailableBagsAdapter extends RecyclerView.Adapter<AvailableBagsAdap
                 if (moreDetailsLayout.getVisibility() == View.GONE){
                     expand(moreDetailsLayout);
 
-//                    listener.onItemClickListener(getAdapterPosition());
+//                    listener.onBagItemClickListener(getAdapterPosition());
                 }
 
                 else{

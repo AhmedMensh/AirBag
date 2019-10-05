@@ -17,6 +17,14 @@
             android:layout_height="match_parent">
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost 1$"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                app:layout_constraintEnd_toEndOf="parent"/>
             <RadioButton
                 android:id="@+id/feature_bag_rb"
                 android:layout_width="wrap_content"

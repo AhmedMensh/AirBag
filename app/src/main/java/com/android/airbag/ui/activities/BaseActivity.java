@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,10 +22,9 @@ import com.android.airbag.ui.activities.notifications.NotificationsActivity;
 import com.android.airbag.ui.activities.payment.PaymentActivity;
 import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity;
 import com.android.airbag.ui.activities.promo_code.PromoCodeActivity;
+import com.android.airbag.ui.activities.reserved_bags.ReservedBagsActivity;
 import com.android.airbag.ui.activities.rules.RulesActivity;
 import com.google.android.material.navigation.NavigationView;
-
-import butterknife.BindView;
 
 public abstract class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -69,8 +67,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                 startActivity(new Intent(this, ProfileSettingsActivity.class));
                 break;
 
-            case R.id.navigation_received_items:
-                Toast.makeText(this, "4", Toast.LENGTH_SHORT).show();
+
+
+            case R.id.navigation_reserved_items:
+                startActivity(new Intent(this , ReservedBagsActivity.class));
                 break;
 
             case R.id.navigation_promo_code:
@@ -109,6 +109,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
 
         }
+
         return false;
     }
     private void showLogoutDialog(){

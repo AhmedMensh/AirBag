@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".ui.activities.phone_verification.PhoneVerificationActivity">
 
 
@@ -179,32 +180,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/_10sdp"
-
-                    android:inputType="phone" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:layout_marginEnd="20dp"
-
-                app:boxBackgroundColor="@android:color/white"
-                app:hintTextColor="@android:color/darker_gray"
-                app:layout_constraintTop_toBottomOf="@+id/enter_number_label"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/_10sdp"
-
-                    android:inputType="phone" />
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -227,8 +205,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/_10sdp"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
 
-                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="20dp"
+
+                app:boxBackgroundColor="@android:color/white"
+                app:hintTextColor="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@+id/enter_number_label"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -252,8 +256,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/_10sdp"
-
-                    android:inputType="phone" />
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
