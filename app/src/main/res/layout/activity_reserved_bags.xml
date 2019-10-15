@@ -150,7 +150,7 @@ android:paddingTop="@dimen/_5sdp"
 
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/layout1"
+                    android:id="@+id/bag_info_cl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -193,7 +193,7 @@ android:paddingTop="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"/>
 
                     <LinearLayout
-                        android:id="@+id/more_details_layout"
+                        android:id="@+id/more_details_cl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -273,7 +273,7 @@ android:paddingTop="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
 
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/layout1"
+                    app:layout_constraintStart_toEndOf="@id/bag_info_cl"
                     android:layout_marginStart="@dimen/_10sdp">
 
                     <ImageView
