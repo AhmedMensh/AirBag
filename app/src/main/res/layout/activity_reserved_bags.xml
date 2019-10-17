@@ -200,33 +200,6 @@ android:paddingTop="@dimen/_5sdp"
 
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Receiver Name"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="AHMED"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/_18sdp"/>
-
-                        <TextView
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Receiver Mobile Number"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="01284536255"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/_18sdp"/>
 
 
                         <TextView
