@@ -1,9 +1,11 @@
 package com.android.airbag.ui.activities.rules;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
+import com.android.airbag.helpers.Utilities;
 import com.android.airbag.ui.activities.BaseActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -41,6 +46,8 @@ public class RulesActivity extends BaseActivity implements View.OnClickListener{
     DrawerLayout drawer;
     @BindView(R.id.menu_icon)
     ImageView menuIcon;
+    @BindView(R.id.layout)
+    LinearLayout rootViewCl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +58,12 @@ public class RulesActivity extends BaseActivity implements View.OnClickListener{
         carrierRulesTv.setOnClickListener(this::onClick);
         menuIcon.setOnClickListener(this::onClick);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Utilities.changeUserType(navigationView ,this);
+        if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1){
+            rootViewCl.setBackgroundResource(R.drawable.full_screen_background_orang);
+            navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+        }
     }
 
     @Override

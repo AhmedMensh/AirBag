@@ -1,7 +1,5 @@
 package com.android.airbag.adapters;
 
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,25 +13,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.airbag.R;
-import com.android.airbag.helpers.Constants;
-import com.android.airbag.helpers.SharedPreferencesManager;
 
-public class AvailableBagsAdapter extends RecyclerView.Adapter<AvailableBagsAdapter.ViewHolder> {
+public class CarrierBagsAdapter extends RecyclerView.Adapter<CarrierBagsAdapter.ViewHolder> {
 
     private static final String TAG = "AvailableBagsAdapter";
     private ItemClickListener listener;
-    private Context context;
-
-    public AvailableBagsAdapter(Context context) {
-        this.context = context;
-    }
 
     public interface ItemClickListener {
         void onItemClickListener(int itemPosition);
     }
 
 
-    public AvailableBagsAdapter(ItemClickListener listener) {
+    public CarrierBagsAdapter(ItemClickListener listener) {
         this.listener = listener;
     }
 
@@ -41,14 +32,12 @@ public class AvailableBagsAdapter extends RecyclerView.Adapter<AvailableBagsAdap
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bag_item,parent, false);
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.carrier_bag_item,parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
 
     }
 
@@ -59,22 +48,20 @@ public class AvailableBagsAdapter extends RecyclerView.Adapter<AvailableBagsAdap
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        LinearLayout moreDetailsLayout,bagInfoLayout;
-        Button addNewItemBtn;
-        ConstraintLayout itemInfoCL;
-        Button saveBtn;
+        LinearLayout bagInfoLayout;
+        ConstraintLayout moreDetailsLayout;
+        Button createBagBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            createBagBtn = itemView.findViewById(R.id.create_bag_btn);
             moreDetailsLayout = itemView.findViewById(R.id.more_details_layout);
-            addNewItemBtn = itemView.findViewById(R.id.add_item_btn);
-            itemInfoCL = itemView.findViewById(R.id.item_info_layout);
             bagInfoLayout = itemView.findViewById(R.id.bag_info_layout);
-            saveBtn = itemView.findViewById(R.id.save_btn);
+
+            createBagBtn.setOnClickListener(this);
             itemView.setOnClickListener(this);
             moreDetailsLayout.setOnClickListener(this);
-            addNewItemBtn.setOnClickListener(this);
             bagInfoLayout.setOnClickListener(this);
         }
 
@@ -82,21 +69,17 @@ public class AvailableBagsAdapter extends RecyclerView.Adapter<AvailableBagsAdap
         public void onClick(View view) {
 
             switch (view.getId()) {
-                case R.id.add_item_btn:
-                    expand(itemInfoCL);
-                    addNewItemBtn.setVisibility(View.GONE);
-                    break;
 
+
+                case R.id.create_bag_btn:
+                    listener.onItemClickListener(getAdapterPosition());
                 case R.id.bag_info_layout:
                     if (moreDetailsLayout.getVisibility() == View.GONE) {
                         expand(moreDetailsLayout);
-                        addNewItemBtn.setVisibility(View.VISIBLE);
 
 //                    listener.onBagItemClickListener(getAdapterPosition());
                     } else {
                         collapse(moreDetailsLayout);
-                        addNewItemBtn.setVisibility(View.GONE);
-                        itemInfoCL.setVisibility(View.GONE);
 
                     }
 

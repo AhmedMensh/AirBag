@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
 import com.android.airbag.ui.activities.bags_list.BagListActivity;
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
+import com.android.airbag.ui.activities.carrier_bags.CarrierBagsActivity;
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import butterknife.BindView;
@@ -28,11 +31,14 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
 
     private static final String TAG = "GuideActivity";
     private Unbinder unbinder;
+    private int userType;
     SectionsPagerAdapter mSectionsPagerAdapter ;
     @BindView(R.id.view_pager) ViewPager mViewPager ;
     @BindView(R.id.dots_indicator)
     SpringDotsIndicator dotsIndicator;
     @BindView(R.id.skip_intro_tv) TextView skipIntroTextView;
+    @BindView(R.id.logo_iv) ImageView logoIv;
+    @BindView(R.id.app_name_tv) TextView appNameTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +53,22 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         mViewPager.setAdapter(mSectionsPagerAdapter);
         dotsIndicator.setViewPager(mViewPager);
 
+        userType = SharedPreferencesManager.getIntValue(this ,Constants.USER_TYPE);
+        if (userType == 1){
+            logoIv.setImageResource(R.drawable.ic_logo_orang);
+            appNameTv.setTextColor(getResources().getColor(R.color.orange));
+
+        }
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.skip_intro_tv:
+                if (userType ==1)
+                startActivity(new Intent(GuideActivity.this , CarrierBagsActivity.class));
+                else
                 startActivity(new Intent(GuideActivity.this , BagListActivity.class));
                 finish();
                 break;
@@ -98,20 +114,17 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
             switch (getArguments().getInt(ARG_SECTION_NUMBER)){
 
                 case 1 :
-                    imageView.setImageResource(R.drawable.ic_logo_colored);
-//                    ln.setBackgroundColor(Color.GRAY);
-                    Toast.makeText(getContext(), "1", Toast.LENGTH_SHORT).show();
+                    imageView.setImageResource(R.drawable.ic_guide_img1);
+//                    ln.setBackgroundColor(Color.GRAY)
                     break;
                 case 2 :
-                    imageView.setImageResource(R.drawable.ic_logo_colored);
+                    imageView.setImageResource(R.drawable.ic_guide_img2);
 
-                    Toast.makeText(getContext(), "2", Toast.LENGTH_SHORT).show();
 //                    ln.setBackgroundColor(Color.RED);
 
                     break;
                 case 3 :
-                    imageView.setImageResource(R.drawable.ic_logo_colored);
-                    Toast.makeText(getContext(), "3", Toast.LENGTH_SHORT).show();
+                    imageView.setImageResource(R.drawable.ic_guide_img3);
 //                    ln.setBackgroundColor(Color.BLACK);
                     break;
 

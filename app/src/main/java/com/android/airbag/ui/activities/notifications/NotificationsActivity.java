@@ -1,11 +1,13 @@
 package com.android.airbag.ui.activities.notifications;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
+import com.android.airbag.helpers.Utilities;
 import com.android.airbag.ui.activities.BaseActivity;
 import com.android.airbag.ui.fragments.aprroved_notifications.ApprovedNotificationsFragment;
 import com.android.airbag.ui.fragments.notifications_history.NotificationsHistoryFragment;
@@ -43,6 +48,7 @@ public class NotificationsActivity extends BaseActivity implements View.OnClickL
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
     @BindView(R.id.menu_icon) ImageView menuIcon;
+    @BindView(R.id.root_view_cl) LinearLayout rootViewCl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,12 @@ public class NotificationsActivity extends BaseActivity implements View.OnClickL
         navigationView.setNavigationItemSelectedListener(this);
 
         attachApprovedRequestFragment();
+        Utilities.changeUserType(navigationView ,this);
+
+        if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) ==1){
+            rootViewCl.setBackgroundResource(R.drawable.full_screen_background_orang);
+            navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+        }
     }
 
     private void attachHistoryNotificationsFragment(){

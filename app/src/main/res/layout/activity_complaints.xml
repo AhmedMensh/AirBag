@@ -8,14 +8,15 @@
     android:layout_height="match_parent"
     android:background="@color/off_white"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
+   tools:openDrawer="start"
     android:layoutDirection="ltr"
     tools:context=".ui.activities.complaints.ComplaintsActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/root_view_cl">
 
         <LinearLayout
             android:id="@+id/layout"
@@ -105,7 +106,7 @@
                 app:boxStrokeColor="@android:color/darker_gray"
                 app:hintEnabled="false"
                 app:hintTextColor="@android:color/darker_gray"
-                app:layout_constraintTop_toBottomOf="@+id/app_name_label">
+                app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/full_name_et"
@@ -145,7 +146,7 @@
                 app:boxStrokeColor="@android:color/darker_gray"
                 app:hintEnabled="false"
                 app:hintTextColor="@android:color/darker_gray"
-                app:layout_constraintTop_toBottomOf="@+id/app_name_label">
+                app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_et"
@@ -186,7 +187,7 @@
                 app:hintEnabled="false"
                 android:layout_marginBottom="@dimen/_10sdp"
                 app:hintTextColor="@android:color/darker_gray"
-                app:layout_constraintTop_toBottomOf="@+id/app_name_label">
+                app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_number_et"
@@ -202,12 +203,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.button.MaterialButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
                 app:cornerRadius="@dimen/_20sdp"
-                app:backgroundTint="@color/purple"
+               android:background="@drawable/button_background_1"
 
                 android:layout_marginTop="@dimen/_50sdp"
                 android:layout_marginStart="@dimen/_20sdp"

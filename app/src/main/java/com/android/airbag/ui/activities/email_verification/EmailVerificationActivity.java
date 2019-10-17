@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
 import com.android.airbag.ui.activities.guide.GuideActivity;
 
 import butterknife.BindView;
@@ -32,6 +35,9 @@ public class EmailVerificationActivity extends AppCompatActivity implements View
     @BindView(R.id.submit_btn) Button submitButton;
     @BindView(R.id.edit_mail_tv)
     TextView editEmailTv;
+    @BindView(R.id.logo_iv)
+    ImageView logoIv;
+    @BindView(R.id.app_name_tv) TextView appNameTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +48,13 @@ public class EmailVerificationActivity extends AppCompatActivity implements View
         continueButton.setOnClickListener(this::onClick);
         submitButton.setOnClickListener(this::onClick);
         editEmailTv.setOnClickListener(this::onClick);
+
+        if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1){
+            continueButton.setBackgroundResource(R.drawable.button_background_2);
+            submitButton.setBackgroundResource(R.drawable.button_background_2);
+            logoIv.setImageResource(R.drawable.ic_logo_orang);
+            appNameTv.setTextColor(getResources().getColor(R.color.orange));
+        }
     }
 
     @Override

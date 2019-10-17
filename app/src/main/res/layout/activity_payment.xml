@@ -16,12 +16,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_108sdp"
-            android:background="@drawable/full_screen_background_blue"
+            android:background="@drawable/full_screen_background_purple"
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingBottom="0dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +139,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"
 
+                android:id="@+id/add_new_card_btn"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_1"/>
 

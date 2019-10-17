@@ -6,13 +6,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.android.airbag.R;
 import com.android.airbag.adapters.ReservedBagsAdapter;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
+import com.android.airbag.helpers.Utilities;
 import com.android.airbag.ui.activities.BaseActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -35,6 +40,10 @@ public class ReservedBagsActivity extends BaseActivity implements View.OnClickLi
     RecyclerView reservedBagsRv;
     @BindView(R.id.reserved_bag_details_layout)
     ConstraintLayout reservedBagDetailsLayout;
+    @BindView(R.id.app_bar_layout)
+    LinearLayout appBarLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +57,13 @@ public class ReservedBagsActivity extends BaseActivity implements View.OnClickLi
         navigationView.setNavigationItemSelectedListener(this);
 
         intReservedBagsRv();
+        Utilities.changeUserType(navigationView ,this);
+        if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) ==1){
+            appBarLayout.setBackgroundResource(R.drawable.full_screen_background_orang);
+            navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+        }
     }
+
 
     private void intReservedBagsRv() {
         reservedBagsRv.setLayoutManager(new LinearLayoutManager(this));
@@ -61,17 +76,12 @@ public class ReservedBagsActivity extends BaseActivity implements View.OnClickLi
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-            Log.e(TAG, "onBackPressed: nav is open");
         } else {
             if (isReservedBagDetailsShown) {
-                Log.e(TAG, "onBackPressed: nav is closed");
-                Log.e(TAG, "onBackPressed: details is show");
                 reservedBagDetailsLayout.setVisibility(View.INVISIBLE);
                 reservedBagsRv.setVisibility(View.VISIBLE);
+                isReservedBagDetailsShown = false;
             } else {
-
-                Log.e(TAG, "onBackPressed: nav is closed");
-                Log.e(TAG, "onBackPressed: rc is shown");
                 super.onBackPressed();
             }
         }

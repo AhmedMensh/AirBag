@@ -14,13 +14,13 @@
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
         android:layout_marginTop="@dimen/_40sdp"
-        app:srcCompat="@drawable/ic_logo_colored"
+        app:srcCompat="@drawable/ic_logo_purble"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/app_name_label"
+        android:id="@+id/app_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_6sdp"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_name_label"
+        app:layout_constraintTop_toBottomOf="@id/app_name_tv"
         android:text="How It Works!"
         android:id="@+id/how_it_work_label"
         android:textAllCaps="true"
@@ -47,8 +47,8 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_110sdp"
-        app:srcCompat="@drawable/ic_logo_colored"
+        android:layout_height="@dimen/_150sdp"
+        app:srcCompat="@drawable/ic_logo_purble"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintTop_toBottomOf="@id/how_it_work_label"/>
 
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/view_pager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:dotsColor="@color/blue_dark"

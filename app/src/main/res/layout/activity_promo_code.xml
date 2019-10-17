@@ -16,12 +16,13 @@ tools:openDrawer="start"
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/root_view_cl">
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_108sdp"
-            android:background="@drawable/full_screen_background_blue"
+            android:background="@drawable/full_screen_background_purple"
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingBottom="0dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +119,7 @@ tools:openDrawer="start"
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/share_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_42sdp"
                 app:layout_constraintEnd_toEndOf="parent"

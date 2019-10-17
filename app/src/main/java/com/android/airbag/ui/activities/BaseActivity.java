@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
 import com.android.airbag.ui.activities.bags_list.BagListActivity;
+import com.android.airbag.ui.activities.carrier_bags.CarrierBagsActivity;
 import com.android.airbag.ui.activities.complaints.ComplaintsActivity;
 import com.android.airbag.ui.activities.login.LoginActivity;
 import com.android.airbag.ui.activities.notifications.NotificationsActivity;
@@ -24,6 +28,7 @@ import com.android.airbag.ui.activities.profile_settings.ProfileSettingsActivity
 import com.android.airbag.ui.activities.promo_code.PromoCodeActivity;
 import com.android.airbag.ui.activities.reserved_bags.ReservedBagsActivity;
 import com.android.airbag.ui.activities.rules.RulesActivity;
+import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public abstract class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
     private static final String TAG = "BaseActivity";
     protected NavigationView navigationView;
     AlertDialog logoutDialog;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +46,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+
     }
 
     @Override
@@ -52,7 +60,9 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                     Toast.makeText(this, "You are in bag list ", Toast.LENGTH_SHORT).show();
                     return false;
                 }
+                if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE)== 0)
                 startActivity(new Intent(this, BagListActivity.class));
+                else startActivity(new Intent(this,CarrierBagsActivity.class));
                 break;
 
             case R.id.navigation_notifications:
@@ -142,4 +152,5 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
     public abstract int getContentViewId();
     public abstract int getNavigationMenuItemId();
+
 }

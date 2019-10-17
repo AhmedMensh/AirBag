@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
 import com.android.airbag.ui.activities.bags_list.BagListActivity;
 import com.android.airbag.ui.activities.create_bag.CreateBagActivity;
 import com.android.airbag.ui.activities.login.LoginActivity;
@@ -18,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
     }
 
     @Override

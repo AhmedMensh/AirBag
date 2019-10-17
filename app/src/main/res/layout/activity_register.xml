@@ -3,6 +3,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     android:layoutDirection="ltr"
+    android:id="@+id/root_view_layout"
     android:background="@drawable/full_screen_background_purple"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -211,13 +212,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submit_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             app:cornerRadius="@dimen/_20sdp"
-            app:backgroundTint="@color/purple"
-
+            android:background="@drawable/button_background_1"
             android:layout_marginTop="@dimen/_100sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:text="@string/submit"

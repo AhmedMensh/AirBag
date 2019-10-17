@@ -1,16 +1,67 @@
 package com.android.airbag.ui.activities.create_bag;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Utilities;
+import com.android.airbag.ui.activities.BaseActivity;
+import com.google.android.material.navigation.NavigationView;
 
-public class CreateBagActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
+public class CreateBagActivity extends BaseActivity implements View.OnClickListener{
+
+    private static final String TAG = "CreateBagActivity";
+    private Unbinder unbinder;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+    @BindView(R.id.menu_icon)
+    ImageView menuIcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_bag);
+
+        unbinder = ButterKnife.bind(this);
+        navigationView.setNavigationItemSelectedListener(this);
+        menuIcon.setOnClickListener(this);
+        navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+        Utilities.changeUserType(navigationView,this);
+    }
+
+    @Override
+    public int getContentViewId() {
+        return R.layout.activity_create_bag;
+    }
+
+    @Override
+    public int getNavigationMenuItemId() {
+        return R.id.navigation_my_bags;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+
+
+            case R.id.menu_icon:
+                if (!drawer.isDrawerOpen(GravityCompat.START))
+                    drawer.openDrawer(GravityCompat.START);
+                break;
+
+
+        }
     }
 }

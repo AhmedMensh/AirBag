@@ -1,4 +1,4 @@
-package com.android.airbag.ui.activities.bags_list;
+package com.android.airbag.ui.activities.carrier_bags;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -8,8 +8,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,8 +16,8 @@ import android.widget.TextView;
 import com.android.airbag.R;
 import com.android.airbag.helpers.Utilities;
 import com.android.airbag.ui.activities.BaseActivity;
-import com.android.airbag.ui.fragments.CreateBagFragment;
 import com.android.airbag.ui.fragments.available_bags.AvailableBagsFragment;
+import com.android.airbag.ui.fragments.carrier_bags.CarrierBagsFragment;
 import com.android.airbag.ui.fragments.filter.FilterFragment;
 import com.android.airbag.ui.fragments.pending_items.PendingItemsFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -28,9 +26,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class BagListActivity extends BaseActivity implements View.OnClickListener {
+public class CarrierBagsActivity extends BaseActivity implements View.OnClickListener {
 
-    private static final String TAG = "AvailableBagsActivity";
+
+    private static final String TAG = "CarrierBagsActivity";
     private Unbinder unbinder;
     @BindView(R.id.available_bags_tv)
     TextView availableBagsTv;
@@ -50,11 +49,13 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
     NavigationView navigationView;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
-    @BindView(R.id.menu_icon) ImageView menuIcon;
+    @BindView(R.id.menu_icon)
+    ImageView menuIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bag_list);
+        setContentView(R.layout.activity_carrier_bags);
 
 
         unbinder = ButterKnife.bind(this);
@@ -62,22 +63,21 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
         pendingItemsTv.setOnClickListener(this::onClick);
         filterIv.setOnClickListener(this::onClick);
         menuIcon.setOnClickListener(this::onClick);
-        attachAvailableBagsFragment();
+        attachCarrierBagsFragment();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
         Utilities.changeUserType(navigationView,this);
-
-
-
 
     }
 
-    private void attachAvailableBagsFragment() {
-        AvailableBagsFragment availableBagsFragment = new AvailableBagsFragment();
+    private void attachCarrierBagsFragment() {
+        CarrierBagsFragment carrierBagsFragment = new CarrierBagsFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.replace(R.id.fragment_container, availableBagsFragment);
+        transaction.replace(R.id.fragment_container, carrierBagsFragment);
         transaction.commit();
     }
 
@@ -105,7 +105,6 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
 
 
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -114,15 +113,15 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else{
+        } else {
             super.onBackPressed();
         }
     }
-    public int getContentViewId(){
-        return R.layout.activity_bag_list;
+
+    public int getContentViewId() {
+        return R.layout.activity_carrier_bags;
     }
 
     @Override
@@ -139,7 +138,7 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
                 tabIndicator2.setVisibility(View.INVISIBLE);
                 availableBagsTv.setTextColor(getResources().getColor(R.color.blue_dark));
                 pendingItemsTv.setTextColor(getResources().getColor(R.color.grey));
-                attachAvailableBagsFragment();
+                attachCarrierBagsFragment();
                 break;
 
             case R.id.pending_items_tv:
@@ -157,7 +156,8 @@ public class BagListActivity extends BaseActivity implements View.OnClickListene
                 break;
 
             case R.id.menu_icon:
-                if (!drawer.isDrawerOpen(GravityCompat.START)) drawer.openDrawer(GravityCompat.START);
+                if (!drawer.isDrawerOpen(GravityCompat.START))
+                    drawer.openDrawer(GravityCompat.START);
                 break;
 
 

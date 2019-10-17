@@ -20,7 +20,7 @@
 <!--            android:id="@+id/layout"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="@dimen/_108sdp"-->
-<!--            android:background="@drawable/full_screen_background_blue"-->
+<!--            android:background="@drawable/full_screen_background_orang"-->
 <!--            app:layout_constraintEnd_toEndOf="parent"-->
 <!--            android:paddingBottom="0dp"-->
 <!--            app:layout_constraintStart_toStartOf="parent"-->
@@ -34,12 +34,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdp"
                 android:gravity="center"
-                android:paddingTop="@dimen/_10sdp"
-                android:background="@drawable/full_screen_background_blue"
+
+                android:background="@drawable/full_screen_background_purple"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
+                android:paddingTop="@dimen/_20sdp"
                 android:orientation="horizontal">
 
                 <ImageView

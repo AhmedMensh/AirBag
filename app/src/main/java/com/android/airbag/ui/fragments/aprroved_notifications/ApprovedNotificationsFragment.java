@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
@@ -15,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.airbag.R;
+import com.android.airbag.helpers.Constants;
+import com.android.airbag.helpers.SharedPreferencesManager;
 import com.android.airbag.ui.activities.BaseActivity;
 import com.android.airbag.ui.activities.login.LoginActivity;
 
@@ -43,11 +47,20 @@ public class ApprovedNotificationsFragment extends Fragment implements View.OnCl
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_approved_notifications, container, false);
+        return inflater.inflate(R.layout.fragment_approved_notifications, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
 
         unbinder = ButterKnife.bind(this ,view);
         showCarrierDetailsButton.setOnClickListener(this::onClick);
-        return view;
+        if (SharedPreferencesManager.getIntValue(getContext(), Constants.USER_TYPE) == 1){
+            showCarrierDetailsButton.setBackgroundResource(R.drawable.button_background_2);
+        }
     }
 
     @Override

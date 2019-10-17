@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.reserved_bags.ReservedBagsActivity"></activity>
+        <activity android:name=".ui.activities.create_item.CreateItemActivity"></activity>
+        <activity android:name=".ui.activities.carrier_bags.CarrierBagsActivity" />
+        <activity android:name=".ui.activities.reserved_bags.ReservedBagsActivity" />
         <activity android:name=".ui.activities.payment.PaymentActivity" />
         <activity android:name=".ui.activities.rules.RulesActivity" />
         <activity android:name=".ui.activities.promo_code.PromoCodeActivity" />
@@ -37,7 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

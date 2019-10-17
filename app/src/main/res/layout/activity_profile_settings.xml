@@ -38,6 +38,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
+            android:id="@+id/upload_image_btn"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
             android:padding="@dimen/_10sdp"
             app:srcCompat="@drawable/ic_camera"
             android:elevation="@dimen/_1sdp"
+
             android:layout_marginEnd="@dimen/_20sdp"
             android:text="@string/be_a_carrier"
             android:textColor="@color/white"
@@ -194,7 +196,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sign_in_btn"
+            android:id="@+id/save_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
             android:background="@drawable/button_background_1"
