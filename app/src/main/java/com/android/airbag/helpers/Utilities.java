@@ -1,9 +1,7 @@
 package com.android.airbag.helpers;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +26,7 @@ public class Utilities {
 
         if (userType == 1 ){
             Menu nav_Menu = navigationView.getMenu();
-            nav_Menu.findItem(R.id.navigation_promo_code).setVisible(false);
+            nav_Menu.findItem(R.id.navigation_message).setVisible(false);
             headerBtn.setText("Be Sender");
             headerBtn.setBackgroundResource(R.drawable.button_background_2);
             userTypeTv.setText("I am Carrier");

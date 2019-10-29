@@ -23,16 +23,19 @@
     <string name="save">Save</string>
 
     <!--  Navigation Menu -->
-    <string name="my_bags_list">My Bags List</string>
-    <string name="notifications">Notifications</string>
-    <string name="profile_settings">Profile Settings</string>
-    <string name="received_items">Received Items</string>
-    <string name="promo_code">Promo Code</string>
-    <string name="payment_wallet">Payment Wallet</string>
-    <string name="received">Received</string>
-    <string name="air_channel">Air Channel</string>
-    <string name="safety_rules">Safety Rules</string>
-    <string name="complaints">Complaints</string>
+    <string name="home">Home</string>
+    <string name="current_bag">Current Bag</string>
+    <string name="create">Create/Edit</string>
+    <string name="demo_reservation">Demo Reservation</string>
+    <string name="message">Message</string>
+    <string name="help">Help</string>
+    <string name="profile">Profile</string>
+    <string name="how_it_works">How I am doing</string>
+    <string name="referrals">Referrals</string>
+    <string name="history">History</string>
+    <string name="about">About AirBag</string>
+
+    <!-- -->
     <string name="submit">Submit</string>
     <string name="be_a_carrier">Be a Carrier</string>
     <string name="full_name">Full Name</string>
@@ -85,5 +88,6 @@ Boy favourable day can introduced sentiments entreaties. Noisier carried of in w
     <string name="cvv">CVV</string>
     <string name="add_new_card">Add new card</string>
     <string name="payment">Payment</string>
+
 
 </resources>

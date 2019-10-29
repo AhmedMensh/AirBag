@@ -4,58 +4,69 @@
 
     <group android:id="@+id/first_group">
 
-        <item android:id="@+id/navigation_my_bags"
-            android:title="@string/my_bags_list"
+        <item android:id="@+id/navigation_home"
+            android:title="@string/home"
             android:icon="@drawable/ic_bag"/>
 
 
-        <item android:id="@+id/navigation_notifications"
-            android:title="@string/notifications"
+        <item android:id="@+id/navigation_current_bag"
+            android:title="@string/current_bag"
             android:icon="@drawable/ic_mail"/>
 
 
-        <item android:id="@+id/navigation_profile_settings"
-            android:title="@string/profile_settings"
+        <item android:id="@+id/navigation_create"
+            android:title="@string/create"
             android:icon="@drawable/ic_settings"/>
 
 
-        <item android:id="@+id/navigation_reserved_items"
-            android:title="@string/received_items"
+        <item android:id="@+id/navigation_reservation_demo"
+            android:title="@string/demo_reservation"
             android:icon="@drawable/ic_checked"/>
     </group>
 
     <group android:id="@+id/second_group" android:checkableBehavior="single">
 
-        <item android:id="@+id/navigation_promo_code"
-            android:title="@string/promo_code"
+        <item android:id="@+id/navigation_message"
+            android:title="@string/message"
             android:icon="@drawable/ic_menu"/>
 
 
-        <item android:id="@+id/navigation_payment_wallet"
-            android:title="@string/payment_wallet"
+        <item android:id="@+id/navigation_help"
+            android:title="@string/help"
             android:icon="@drawable/ic_wallet"/>
 
 
-        <item android:id="@+id/navigation_received"
-            android:title="@string/received"
+        <item android:id="@+id/navigation_profile"
+            android:title="@string/profile"
             android:icon="@drawable/ic_bag1"/>
 
     </group>
 
     <group android:id="@+id/third_group">
 
-        <item android:id="@+id/navigation_air_channel"
-            android:title="@string/air_channel"
+        <item android:id="@+id/navigation_how_it_works"
+            android:title="@string/how_it_works"
             android:icon="@drawable/ic_youtube"/>
 
 
-        <item android:id="@+id/navigation_safety_rules"
-            android:title="@string/safety_rules"
-            android:icon="@drawable/ic_saftey_shield"/>
+<!--        <item android:id="@+id/navigation_safety_rules"-->
+<!--            android:title="@string/how_it_works"-->
+<!--            android:icon="@drawable/ic_saftey_shield"/>-->
 
 
-        <item android:id="@+id/navigation_complaints"
-            android:title="@string/complaints"
+        <item android:id="@+id/navigation_referrals"
+            android:title="@string/referrals"
+            android:icon="@drawable/ic_complinte"/>
+
+
+        <item android:id="@+id/navigation_history"
+            android:title="@string/history"
+            android:icon="@drawable/ic_complinte"/>
+
+
+
+        <item android:id="@+id/navigation_about"
+            android:title="@string/about"
             android:icon="@drawable/ic_complinte"/>
 
 

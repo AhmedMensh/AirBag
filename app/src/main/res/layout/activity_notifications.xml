@@ -57,7 +57,7 @@
                     android:textColor="@color/white"
                     android:paddingStart="@dimen/_30sdp"
                     android:paddingEnd="@dimen/_40sdp"
-                    android:text="@string/notifications"
+                    android:text="@string/current_bag"
                     android:textSize="@dimen/_20sdp"
                     />
 

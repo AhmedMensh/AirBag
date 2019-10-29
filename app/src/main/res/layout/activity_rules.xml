@@ -57,7 +57,7 @@
                     android:textColor="@color/white"
                     android:paddingStart="@dimen/_30sdp"
                     android:paddingEnd="@dimen/_40sdp"
-                    android:text="@string/safety_rules"
+                    android:text="@string/how_it_works"
                     android:textSize="@dimen/_20sdp"
                     />
 

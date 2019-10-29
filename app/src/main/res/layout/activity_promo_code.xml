@@ -57,7 +57,7 @@ tools:openDrawer="start"
                     android:textColor="@color/white"
                     android:paddingStart="@dimen/_30sdp"
                     android:paddingEnd="@dimen/_40sdp"
-                    android:text="@string/promo_code"
+                    android:text="@string/message"
                     android:textSize="@dimen/_20sdp"
                     />
 
