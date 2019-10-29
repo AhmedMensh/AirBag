@@ -46,7 +46,7 @@ public class PendingItemsFragment extends Fragment implements View.OnClickListen
 
         unbinder = ButterKnife.bind(this,view);
 
-        if (SharedPreferencesManager.getIntValue(getContext(), Constants.USER_TYPE) == 1){
+        if (SharedPreferencesManager.INSTANCE.getIntValue(getContext(), Constants.INSTANCE.getUSER_TYPE()) == 1){
             addNewItemButton.setVisibility(View.INVISIBLE);
         }
         addNewItemButton.setOnClickListener(view1 ->
