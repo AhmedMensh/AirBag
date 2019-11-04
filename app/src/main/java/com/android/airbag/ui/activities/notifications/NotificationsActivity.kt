@@ -6,6 +6,7 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -43,7 +44,7 @@ class NotificationsActivity : BaseActivity(), View.OnClickListener {
 
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             root_view_cl!!.setBackgroundResource(R.drawable.full_screen_background_orang)
-            nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 
@@ -82,16 +83,16 @@ class NotificationsActivity : BaseActivity(), View.OnClickListener {
                 attachApprovedRequestFragment()
                 tab_indicator1!!.visibility = View.VISIBLE
                 tab_indicator2!!.visibility = View.INVISIBLE
-                approved_request_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
-                history_notification_tv!!.setTextColor(resources.getColor(R.color.grey))
+                approved_request_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
+                history_notification_tv!!.setTextColor(ContextCompat.getColor(this,R.color.grey))
             }
 
             R.id.history_notification_tv -> {
                 attachHistoryNotificationsFragment()
                 tab_indicator1!!.visibility = View.INVISIBLE
                 tab_indicator2!!.visibility = View.VISIBLE
-                approved_request_tv!!.setTextColor(resources.getColor(R.color.grey))
-                history_notification_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
+                approved_request_tv!!.setTextColor(ContextCompat.getColor(this,R.color.grey))
+                history_notification_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
             }
 
 

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -48,7 +49,7 @@ class PhoneVerificationActivity : AppCompatActivity(), View.OnClickListener {
             continue_btn!!.setBackgroundResource(R.drawable.button_background_2)
             submit_btn!!.setBackgroundResource(R.drawable.button_background_2)
             logo_iv!!.setImageResource(R.drawable.ic_logo_orang)
-            app_name_tv!!.setTextColor(resources.getColor(R.color.orange))
+            app_name_tv!!.setTextColor(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

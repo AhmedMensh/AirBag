@@ -43,6 +43,8 @@ object Network {
                     .removeHeader(REQUIRE_AUTHENTICATION)
                     .addHeader("Authorization", "Bearer $authToken")
                     .addHeader("Accept", "application/json")
+                    .addHeader("Content-Type", "application/json")
+                    .addHeader("Accept-Language", "en")
                     .build()
             } else {
                 request.newBuilder()

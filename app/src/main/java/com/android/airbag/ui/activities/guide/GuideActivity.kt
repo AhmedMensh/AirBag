@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -44,7 +45,7 @@ class GuideActivity : AppCompatActivity(), View.OnClickListener {
         userType = SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE)
         if (userType == 1) {
             logo_iv!!.setImageResource(R.drawable.ic_logo_orang)
-            app_name_tv!!.setTextColor(resources.getColor(R.color.orange))
+            app_name_tv!!.setTextColor(ContextCompat.getColor(this,R.color.orange))
 
         }
 

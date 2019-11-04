@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Utilities
@@ -60,7 +61,7 @@ class CarrierBagsActivity : BaseActivity(), View.OnClickListener {
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+        nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         Utilities.changeUserType(nav_view, this)
 
     }
@@ -116,16 +117,16 @@ class CarrierBagsActivity : BaseActivity(), View.OnClickListener {
             R.id.available_bags_tv -> {
                 tab_indicator1!!.visibility = View.VISIBLE
                 tab_indicator2!!.visibility = View.INVISIBLE
-                available_bags_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
-                pending_items_tv!!.setTextColor(resources.getColor(R.color.grey))
+                available_bags_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
+                pending_items_tv!!.setTextColor(ContextCompat.getColor(this,R.color.grey))
                 attachCarrierBagsFragment()
             }
 
             R.id.pending_items_tv -> {
                 tab_indicator1!!.visibility = View.INVISIBLE
                 tab_indicator2!!.visibility = View.VISIBLE
-                available_bags_tv!!.setTextColor(resources.getColor(R.color.grey))
-                pending_items_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
+                available_bags_tv!!.setTextColor(ContextCompat.getColor(this,R.color.grey))
+                pending_items_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
                 attachPendingItemsFragment()
             }
 

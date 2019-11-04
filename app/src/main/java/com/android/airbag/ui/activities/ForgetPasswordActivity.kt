@@ -3,6 +3,7 @@ package com.android.airbag.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -22,7 +23,7 @@ class ForgetPasswordActivity : AppCompatActivity() {
 
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             logo_iv!!.setImageResource(R.drawable.ic_logo_orang)
-            app_name_tv!!.setTextColor(resources.getColor(R.color.orange))
+            app_name_tv!!.setTextColor(ContextCompat.getColor(this,R.color.orange))
             send_btn!!.setBackgroundResource(R.drawable.button_background_2)
         }
     }

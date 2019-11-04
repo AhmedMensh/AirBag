@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 
 
 import com.android.airbag.R
@@ -36,7 +37,7 @@ class PaymentActivity : BaseActivity(), View.OnClickListener {
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             layout!!.setBackgroundResource(R.drawable.full_screen_background_orang)
             add_new_card_btn!!.setBackgroundResource(R.drawable.button_background_2)
-            nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

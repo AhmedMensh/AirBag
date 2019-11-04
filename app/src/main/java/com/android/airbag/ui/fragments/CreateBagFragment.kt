@@ -34,7 +34,7 @@ class CreateBagFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (SharedPreferencesManager.getIntValue(context, Constants.USER_TYPE) == 1) {
+        if (SharedPreferencesManager.getIntValue(context!!, Constants.USER_TYPE) == 1) {
             create_item_btn!!.setBackgroundResource(R.drawable.button_background_2)
         }
     }

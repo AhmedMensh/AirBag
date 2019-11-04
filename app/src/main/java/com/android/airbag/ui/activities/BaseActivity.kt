@@ -29,7 +29,7 @@ import com.android.airbag.ui.activities.reserved_bags.ReservedBagsActivity
 import com.android.airbag.ui.activities.rules.RulesActivity
 import com.google.android.material.navigation.NavigationView
 
-open abstract class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+abstract class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     protected lateinit var navigationView: NavigationView
     internal lateinit var logoutDialog: AlertDialog
 

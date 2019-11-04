@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -30,7 +31,7 @@ class PromoCodeActivity : BaseActivity(), View.OnClickListener {
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             root_view_cl!!.setBackgroundResource(R.drawable.full_screen_background_orang)
             share_btn!!.setBackgroundResource(R.drawable.button_background_2)
-            nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

@@ -35,7 +35,7 @@ class FilterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        if (SharedPreferencesManager.getIntValue(context, Constants.USER_TYPE) == 1) {
+        if (SharedPreferencesManager.getIntValue(context!!, Constants.USER_TYPE) == 1) {
             filter_btn!!.setBackgroundResource(R.drawable.button_background_2)
         }
     }

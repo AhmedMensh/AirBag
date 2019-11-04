@@ -35,7 +35,7 @@ object Utilities {
 
 
 
-        headerBtn.setOnClickListener { view ->
+        headerBtn.setOnClickListener {
             if (userType == 1)
                 SharedPreferencesManager.setIntValue(context, Constants.USER_TYPE, 0)
             else

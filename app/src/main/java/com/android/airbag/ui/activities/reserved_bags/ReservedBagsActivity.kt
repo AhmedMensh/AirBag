@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.adapters.ReservedBagsAdapter
@@ -54,7 +55,7 @@ class ReservedBagsActivity : BaseActivity(), View.OnClickListener, ReservedBagsA
         Utilities.changeUserType(nav_view, this)
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             app_bar_layout!!.setBackgroundResource(R.drawable.full_screen_background_orang)
-            nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

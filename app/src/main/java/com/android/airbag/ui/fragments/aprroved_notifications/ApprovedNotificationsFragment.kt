@@ -42,7 +42,7 @@ class ApprovedNotificationsFragment : Fragment(), View.OnClickListener {
 
 
         show_carrier_details_btn!!.setOnClickListener{ this.onClick(it) }
-        if (SharedPreferencesManager.getIntValue(context, Constants.USER_TYPE) == 1) {
+        if (SharedPreferencesManager.getIntValue(context!!, Constants.USER_TYPE) == 1) {
             show_carrier_details_btn!!.setBackgroundResource(R.drawable.button_background_2)
         }
     }

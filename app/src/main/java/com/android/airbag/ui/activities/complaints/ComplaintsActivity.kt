@@ -9,6 +9,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -39,7 +40,7 @@ class ComplaintsActivity : BaseActivity(), View.OnClickListener {
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             layout!!.setBackgroundResource(R.drawable.full_screen_background_orang)
             submit_btn!!.setBackgroundResource(R.drawable.button_background_2)
-            nav_view.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

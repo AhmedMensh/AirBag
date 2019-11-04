@@ -4,6 +4,7 @@ import androidx.core.view.GravityCompat
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
 import com.android.airbag.helpers.SharedPreferencesManager
@@ -29,7 +30,7 @@ class CreateItemActivity : BaseActivity(), View.OnClickListener {
 
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
 
-            nav_view!!.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            nav_view!!.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 

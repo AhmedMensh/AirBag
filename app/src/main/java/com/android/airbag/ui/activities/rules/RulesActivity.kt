@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Constants
@@ -26,12 +27,12 @@ class RulesActivity : BaseActivity(), View.OnClickListener {
         sender_rules_tv!!.setOnClickListener { this.onClick(it) }
         carrier_rules_tv!!.setOnClickListener { this.onClick(it) }
         menu_icon!!.setOnClickListener{ this.onClick(it) }
-        navigationView!!.setNavigationItemSelectedListener(this)
+        navigationView.setNavigationItemSelectedListener(this)
 
-        Utilities.changeUserType(navigationView!!, this)
+        Utilities.changeUserType(navigationView, this)
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             layout!!.setBackgroundResource(R.drawable.full_screen_background_orang)
-            navigationView!!.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+            navigationView.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
 
@@ -41,15 +42,15 @@ class RulesActivity : BaseActivity(), View.OnClickListener {
             R.id.carrier_rules_tv -> {
                 tab_indicator1!!.visibility = View.VISIBLE
                 tab_indicator2!!.visibility = View.INVISIBLE
-                carrier_rules_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
-                sender_rules_tv!!.setTextColor(resources.getColor(R.color.grey))
+                carrier_rules_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
+                sender_rules_tv!!.setTextColor(ContextCompat.getColor(this ,R.color.grey))
             }
 
             R.id.sender_rules_tv -> {
                 tab_indicator1!!.visibility = View.INVISIBLE
                 tab_indicator2!!.visibility = View.VISIBLE
-                carrier_rules_tv!!.setTextColor(resources.getColor(R.color.grey))
-                sender_rules_tv!!.setTextColor(resources.getColor(R.color.blue_dark))
+                carrier_rules_tv!!.setTextColor(ContextCompat.getColor(this,R.color.grey))
+                sender_rules_tv!!.setTextColor(ContextCompat.getColor(this,R.color.blue_dark))
             }
 
 

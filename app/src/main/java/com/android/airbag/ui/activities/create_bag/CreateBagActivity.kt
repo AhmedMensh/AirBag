@@ -7,6 +7,7 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 
 import com.android.airbag.R
 import com.android.airbag.helpers.Utilities
@@ -27,7 +28,7 @@ class CreateBagActivity : BaseActivity(), View.OnClickListener {
 
         nav_view!!.setNavigationItemSelectedListener(this)
         menu_icon!!.setOnClickListener(this)
-        nav_view!!.itemIconTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+        nav_view!!.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         Utilities.changeUserType(nav_view!!, this)
     }
 

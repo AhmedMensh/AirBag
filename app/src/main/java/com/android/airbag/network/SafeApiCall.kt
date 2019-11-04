@@ -25,7 +25,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> ApiResponse<T>): DataResult<T
         return DataResult.Error(Exception("حدث خطا ما. برجاء المحاولة مرة اخري."))
 
     } catch (e: Exception) {
-        Log.i("Error", e.message)
+        Log.i("Error", e?.message)
         when (e) {
             is HttpException -> {
                 val errorBodyString = e.response()?.errorBody()?.string()
@@ -44,7 +44,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> ApiResponse<T>): DataResult<T
                     in 400 until 500 -> {
                         DataResult.Error(
                             Exception(
-                                errorBodyJson?.error?.message ?: "برجاء التاكد من البيانات."
+                                errorBodyJson?.message ?: "برجاء التاكد من البيانات."
                             )
                         )
                     }
