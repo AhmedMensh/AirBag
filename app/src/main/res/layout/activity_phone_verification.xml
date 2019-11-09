@@ -65,7 +65,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email_et"
+                android:id="@+id/emailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="0dp"
@@ -264,7 +264,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/submit_btn"
+            android:id="@+id/submitBtn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginStart="@dimen/_20sdp"

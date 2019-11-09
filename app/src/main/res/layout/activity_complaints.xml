@@ -109,7 +109,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/full_name_et"
+                    android:id="@+id/fullNameET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/enter_your_full_name"
@@ -149,7 +149,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email_et"
+                    android:id="@+id/emailET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
@@ -190,7 +190,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/app_name_tv">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone_number_et"
+                    android:id="@+id/phoneNumberET"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_130sdp"
                     android:gravity="start|top"
@@ -204,7 +204,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/submit_btn"
+                android:id="@+id/submitBtn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
                 app:cornerRadius="@dimen/_20sdp"

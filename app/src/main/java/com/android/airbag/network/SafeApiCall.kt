@@ -4,7 +4,7 @@ import android.util.Log
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import retrofit2.HttpException
-import sa.amaz.jaz.student.models.ApiError
+import com.android.airbag.models.ApiError
 import sa.amaz.jaz.student.models.ApiResponse
 import sa.amaz.jaz.student.models.DataResult
 import java.io.IOException
@@ -25,13 +25,14 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> ApiResponse<T>): DataResult<T
         return DataResult.Error(Exception("حدث خطا ما. برجاء المحاولة مرة اخري."))
 
     } catch (e: Exception) {
-        Log.i("Error", e?.message)
+        Log.i("Error", e?.localizedMessage)
         when (e) {
             is HttpException -> {
                 val errorBodyString = e.response()?.errorBody()?.string()
                 var errorBodyJson: ApiError? = null
                 if (errorBodyString != null) {
                     try {
+                        Log.i("Error",errorBodyString)
                         errorBodyJson = jsonAdapter.fromJson(errorBodyString)
                     } catch (e: Exception) {
                         e.printStackTrace()

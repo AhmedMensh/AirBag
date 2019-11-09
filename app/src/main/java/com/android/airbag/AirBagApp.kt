@@ -14,6 +14,7 @@ class AirBagApp : Application() {
         Network.init(Constants.BASE_URL,BuildConfig.DEBUG)
 
         startKoin {
+            this@AirBagApp
             androidContext(this@AirBagApp)
             modules(*getModules())
         }

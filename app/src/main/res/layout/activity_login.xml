@@ -63,7 +63,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_et"
+            android:id="@+id/emailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="0dp"
@@ -100,13 +100,13 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_et"
+            android:id="@+id/passwordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="0dp"
             android:paddingEnd="0dp"
             android:background="@android:color/transparent"
-android:layout_gravity="center"
+            android:layout_gravity="center"
             android:gravity="top"
             android:paddingBottom="@dimen/_10sdp"
             android:hint="Password"
@@ -115,7 +115,7 @@ android:layout_gravity="center"
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sign_in_btn"
+        android:id="@+id/signInBtn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_42sdp"
         app:cornerRadius="@dimen/_20sdp"
@@ -132,10 +132,10 @@ android:layout_gravity="center"
         app:layout_constraintTop_toBottomOf="@id/password_input"/>
 
     <TextView
-        android:id="@+id/forget_password_tv"
+        android:id="@+id/forgetPasswordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_btn"
+        app:layout_constraintTop_toBottomOf="@id/signInBtn"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/forget_password"
         android:layout_marginEnd="@dimen/_10sdp"
@@ -144,10 +144,10 @@ android:layout_gravity="center"
       />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/sign_up_btn"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
-        app:layout_constraintTop_toBottomOf="@+id/forget_password_tv"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPasswordTV"
         android:layout_marginStart="@dimen/_30sdp"
         app:elevation="@dimen/_6sdp"
         android:layout_marginEnd="@dimen/_30sdp"

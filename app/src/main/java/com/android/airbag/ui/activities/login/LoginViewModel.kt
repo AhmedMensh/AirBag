@@ -24,9 +24,11 @@ class LoginViewModel(private val iAirBagRepo: IAirBagRepo) : ViewModel() {
             when(result){
                 is DataResult.Success -> {
                     data.value = result.content
+                    error.value = null
                 }
                 is DataResult.Error -> {
                     error.value = result.exception.message
+                    data.value = null
                 }
             }
         }

@@ -81,6 +81,9 @@ dependencies {
     // ViewModel && LiveData
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01'
     implementation 'androidx.lifecycle:lifecycle-livedata:2.2.0-alpha01'
+
+    // UriUtils
+    implementation 'com.blankj:utilcodex:1.24.4'
 }
 repositories {
     mavenCentral()

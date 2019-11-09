@@ -90,4 +90,8 @@ Boy favourable day can introduced sentiments entreaties. Noisier carried of in w
     <string name="payment">Payment</string>
 
 
+
+    <!-- Label -->
+    <string name="all_fields_required">All Fields Required</string>
+
 </resources>

@@ -1,12 +1,15 @@
 package com.android.airbag.repositories
 
+import android.content.Context
+import com.android.airbag.helpers.Constants
+import com.android.airbag.helpers.SharedPreferencesManager
 import com.android.airbag.models.LoginBody
 import com.android.airbag.models.RegisterBody
 import com.android.airbag.models.RegisterResponse
 import com.android.airbag.network.RemoteDataSource
 import sa.amaz.jaz.student.models.DataResult
 
-class AirBagRepo(private val remoteDataSource: RemoteDataSource) : IAirBagRepo {
+class AirBagRepo(private val remoteDataSource: RemoteDataSource , private val context: Context) : IAirBagRepo {
 
 
     override suspend fun login(loginBody: LoginBody): DataResult<RegisterResponse> {
@@ -14,6 +17,7 @@ class AirBagRepo(private val remoteDataSource: RemoteDataSource) : IAirBagRepo {
         return when(val result = remoteDataSource.login(loginBody)){
             is DataResult.Success ->{
                 val data = result.content
+                SharedPreferencesManager.setStringValue(context ,Constants.TOKEN,data?.token!!)
                 DataResult.Success(data)
             }
             is DataResult.Error -> return DataResult.Error(result.exception)

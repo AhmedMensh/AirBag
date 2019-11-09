@@ -17,11 +17,11 @@ object Network {
 
     fun init(baseUrl: String, isDebug: Boolean = false) {
         retrofit = Retrofit
-            .Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(MoshiConverterFactory.create())
-            .client(buildClient(isDebug))
-            .build()
+                .Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(MoshiConverterFactory.create())
+                .client(buildClient(isDebug))
+                .build()
     }
 
     private fun buildClient(isDebug: Boolean): OkHttpClient {
@@ -40,16 +40,18 @@ object Network {
             var request = chain.request()
             request = if (request.header(REQUIRE_AUTHENTICATION) != null) {
                 request.newBuilder()
-                    .removeHeader(REQUIRE_AUTHENTICATION)
-                    .addHeader("Authorization", "Bearer $authToken")
-                    .addHeader("Accept", "application/json")
-                    .addHeader("Content-Type", "application/json")
-                    .addHeader("Accept-Language", "en")
-                    .build()
+                        .removeHeader(REQUIRE_AUTHENTICATION)
+                        .addHeader("Authorization", "Bearer $authToken")
+                        .addHeader("Accept", "application/json")
+                        .addHeader("Content-Type", "application/json")
+                        .addHeader("Accept-Language", "en")
+                        .build()
             } else {
                 request.newBuilder()
-                    .addHeader("Accept", "application/json")
-                    .build()
+                        .addHeader("Accept", "application/json")
+                        .addHeader("Content-Type", "application/json")
+                        .addHeader("Accept-Language", "en")
+                        .build()
             }
             return chain.proceed(request)
         }

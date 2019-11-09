@@ -2,7 +2,6 @@ package com.android.airbag.ui.activities.complaints
 
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -34,12 +33,12 @@ class ComplaintsActivity : BaseActivity(), View.OnClickListener {
 
         nav_view.setNavigationItemSelectedListener(this)
         menu_icon!!.setOnClickListener { this.onClick(it) }
-        submit_btn!!.setOnClickListener { this.onClick(it) }
+        submitBtn!!.setOnClickListener { this.onClick(it) }
 
         Utilities.changeUserType(nav_view, this)
         if (SharedPreferencesManager.getIntValue(this, Constants.USER_TYPE) == 1) {
             layout!!.setBackgroundResource(R.drawable.full_screen_background_orang)
-            submit_btn!!.setBackgroundResource(R.drawable.button_background_2)
+            submitBtn!!.setBackgroundResource(R.drawable.button_background_2)
             nav_view.itemIconTintList = ColorStateList.valueOf(ContextCompat.getColor(this,R.color.orange))
         }
     }
@@ -55,7 +54,7 @@ class ComplaintsActivity : BaseActivity(), View.OnClickListener {
         when (view.id) {
             R.id.menu_icon -> if (!drawer_layout!!.isDrawerOpen(GravityCompat.START)) drawer_layout!!.openDrawer(GravityCompat.START)
 
-            R.id.submit_btn -> showConfirmationDialog()
+            R.id.submitBtn -> showConfirmationDialog()
         }
     }
 

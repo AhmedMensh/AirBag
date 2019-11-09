@@ -16,7 +16,7 @@ private val remoteModule = module { factory {  RemoteDataSource(get()) } }
 
 private var repositoryModule = module {
 
-    single<IAirBagRepo> {AirBagRepo(get())}
+    single<IAirBagRepo> {AirBagRepo(get() ,get())}
 }
 
 private val viewModelModule = module {
