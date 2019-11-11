@@ -15,11 +15,11 @@ import com.android.airbag.R
 import com.android.airbag.helpers.Constants
 import com.android.airbag.helpers.SharedPreferencesManager
 import com.android.airbag.models.LoginBody
-import com.android.airbag.ui.activities.ForgetPasswordActivity
+import com.android.airbag.ui.activities.reset_password.ForgetPasswordActivity
 import com.android.airbag.ui.activities.bags_list.BagListActivity
 import com.android.airbag.ui.activities.carrier_bags.CarrierBagsActivity
-import com.android.airbag.ui.activities.email_verification.EmailVerificationActivity
-import com.android.airbag.ui.activities.phone_verification.PhoneVerificationActivity
+import com.android.airbag.ui.activities.account_verification.EmailVerificationActivity
+import com.android.airbag.ui.activities.account_verification.PhoneVerificationActivity
 import com.android.airbag.ui.activities.register.RegisterActivity
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                     it?.let {
 
                         if(it.status == 0){
-                            startActivity( Intent(this,PhoneVerificationActivity::class.java))
+                            startActivity( Intent(this, PhoneVerificationActivity::class.java))
                         }
                         if(it.status == 1){
                             startActivity( Intent(this,EmailVerificationActivity::class.java))

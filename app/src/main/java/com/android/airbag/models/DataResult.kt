@@ -1,4 +1,6 @@
-package sa.amaz.jaz.student.models
+package com.android.airbag.models
+
+import java.lang.Exception
 
 sealed class DataResult<out T> {
     data class Success<T>(val content: T?) : DataResult<T>()

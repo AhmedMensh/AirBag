@@ -6,7 +6,7 @@ import com.squareup.moshi.Moshi
 import retrofit2.HttpException
 import com.android.airbag.models.ApiError
 import sa.amaz.jaz.student.models.ApiResponse
-import sa.amaz.jaz.student.models.DataResult
+import com.android.airbag.models.DataResult
 import java.io.IOException
 
 
@@ -25,14 +25,13 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> ApiResponse<T>): DataResult<T
         return DataResult.Error(Exception("حدث خطا ما. برجاء المحاولة مرة اخري."))
 
     } catch (e: Exception) {
-        Log.i("Error", e?.localizedMessage)
+        Log.i("Error", e?.message)
         when (e) {
             is HttpException -> {
                 val errorBodyString = e.response()?.errorBody()?.string()
                 var errorBodyJson: ApiError? = null
                 if (errorBodyString != null) {
                     try {
-                        Log.i("Error",errorBodyString)
                         errorBodyJson = jsonAdapter.fromJson(errorBodyString)
                     } catch (e: Exception) {
                         e.printStackTrace()
@@ -43,6 +42,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> ApiResponse<T>): DataResult<T
                         DataResult.Error(Exception("غير مصرح لك."))
                     }
                     in 400 until 500 -> {
+                        Log.i("Error",errorBodyJson?.message)
                         DataResult.Error(
                             Exception(
                                 errorBodyJson?.message ?: "برجاء التاكد من البيانات."

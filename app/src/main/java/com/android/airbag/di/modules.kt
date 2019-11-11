@@ -4,8 +4,10 @@ import com.android.airbag.network.Network
 import com.android.airbag.network.RemoteDataSource
 import com.android.airbag.repositories.AirBagRepo
 import com.android.airbag.repositories.IAirBagRepo
+import com.android.airbag.ui.activities.account_verification.AccountVerificationViewModel
 import com.android.airbag.ui.activities.login.LoginViewModel
 import com.android.airbag.ui.activities.register.RegisterViewModel
+import com.android.airbag.ui.activities.reset_password.ResetPasswordViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -22,6 +24,8 @@ private var repositoryModule = module {
 private val viewModelModule = module {
     viewModel { RegisterViewModel(get()) }
     viewModel { LoginViewModel(get()) }
+    viewModel { AccountVerificationViewModel(get()) }
+    viewModel { ResetPasswordViewModel(get()) }
 }
 
 fun getModules() : Array<Module>{

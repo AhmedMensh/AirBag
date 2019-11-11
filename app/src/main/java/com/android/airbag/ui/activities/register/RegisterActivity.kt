@@ -110,6 +110,8 @@ class RegisterActivity : AppCompatActivity() {
         registerBody.email = emailET.text.toString()
         registerBody.password = passwordET.text.toString()
         registerBody.phone = phoneNumberET.text.toString()
+        registerBody.phoneCountry = "+20"
+
         return true
     }
     companion object {

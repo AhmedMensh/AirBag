@@ -10,7 +10,7 @@ import com.android.airbag.repositories.IAirBagRepo
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import sa.amaz.jaz.student.models.DataResult
+import com.android.airbag.models.DataResult
 
 class LoginViewModel(private val iAirBagRepo: IAirBagRepo) : ViewModel() {
 

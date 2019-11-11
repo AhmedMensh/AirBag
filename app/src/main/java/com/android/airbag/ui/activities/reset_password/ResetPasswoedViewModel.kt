@@ -1,37 +1,36 @@
-package com.android.airbag.ui.activities.register
+package com.android.airbag.ui.activities.reset_password
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.airbag.models.RegisterBody
-import com.android.airbag.models.RegisterResponse
+import com.android.airbag.models.DataResult
 import com.android.airbag.repositories.IAirBagRepo
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.android.airbag.models.DataResult
 
-class RegisterViewModel(private val iAirBagRepo: IAirBagRepo) : ViewModel() {
+class ResetPasswordViewModel(private val iAirBagRepo: IAirBagRepo) : ViewModel() {
 
-    var error  = MutableLiveData<String>()
+    var error = MutableLiveData<String>()
 
-    fun register(registerBody: RegisterBody) : LiveData<RegisterResponse>{
-        val data :MutableLiveData<RegisterResponse> = MutableLiveData()
+    fun resetPassword(email : String) : LiveData<Boolean>{
+
+        var data = MutableLiveData<Boolean>()
 
         viewModelScope.launch {
-            val result = withContext(IO) { iAirBagRepo.register(registerBody)}
-            when(result){
+            when(val result = withContext(IO) {iAirBagRepo.resetPassword(email)}){
                 is DataResult.Success -> {
                     data.value = result.content
+                    error.value = null
                 }
                 is DataResult.Error -> {
                     error.value = result.exception.message
+                    data.value = null
                 }
             }
+
         }
         return data
     }
-
 }
-

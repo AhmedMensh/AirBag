@@ -20,13 +20,13 @@
         <activity android:name=".ui.activities.payment.PaymentActivity" />
         <activity android:name=".ui.activities.rules.RulesActivity" />
         <activity android:name=".ui.activities.promo_code.PromoCodeActivity" />
-        <activity android:name=".ui.activities.email_verification.EmailVerificationActivity" />
-        <activity android:name=".ui.activities.ForgetPasswordActivity" />
+        <activity android:name=".ui.activities.account_verification.EmailVerificationActivity" />
+        <activity android:name=".ui.activities.reset_password.ForgetPasswordActivity" />
         <activity android:name=".ui.activities.notifications.NotificationsActivity" />
         <activity android:name=".ui.activities.complaints.ComplaintsActivity" />
         <activity android:name=".ui.activities.profile_settings.ProfileSettingsActivity" />
         <activity android:name=".ui.activities.create_bag.CreateBagActivity" />
-        <activity android:name=".ui.activities.phone_verification.PhoneVerificationActivity" />
+        <activity android:name=".ui.activities.account_verification.PhoneVerificationActivity" />
         <activity
             android:name=".ui.activities.bags_list.BagListActivity"
             android:windowSoftInputMode="adjustResize" />

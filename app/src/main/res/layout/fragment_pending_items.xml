@@ -19,7 +19,7 @@
         android:layout_margin="@dimen/_50sdp"
         app:srcCompat="@drawable/ic_man"/>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/new_item_btn"
+        android:id="@+id/addNewItemButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginStart="@dimen/_40sdp"
