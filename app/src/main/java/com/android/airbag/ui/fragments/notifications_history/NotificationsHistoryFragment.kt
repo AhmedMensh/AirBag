@@ -32,7 +32,7 @@ class NotificationsHistoryFragment : Fragment() {
 
 
 
-        return view
+        return inflater.inflate(R.layout.fragment_notifications_history, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,9 +42,9 @@ class NotificationsHistoryFragment : Fragment() {
 
     }
     private fun initNotificationsRv() {
-        notifications_history_rv!!.layoutManager = LinearLayoutManager(context)
-        notifications_history_rv!!.setHasFixedSize(true)
-        notifications_history_rv!!.adapter = NotificationsAdapter()
+
+        notifications_history_rv.setHasFixedSize(true)
+        notifications_history_rv.adapter = NotificationsAdapter()
     }
 
 
